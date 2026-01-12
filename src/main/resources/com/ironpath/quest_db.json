@@ -1,0 +1,88 @@
+{
+  "WATERFALL_QUEST": {
+    "why": "Huge early combat XP (Attack/Strength).",
+    "xpRewards": {
+      "ATTACK": 30000,
+      "STRENGTH": 30000
+    },
+    "tags": [
+      "combatxp",
+      "early"
+    ]
+  },
+  "TREE_GNOME_VILLAGE": {
+    "why": "Attack XP and spirit tree access.",
+    "xpRewards": {
+      "ATTACK": 11450
+    },
+    "tags": [
+      "early",
+      "unlock"
+    ]
+  },
+  "THE_GRAND_TREE": {
+    "why": "Gnome gliders and big account unlocks.",
+    "xpRewards": {
+      "ATTACK": 18400,
+      "MAGIC": 7900,
+      "AGILITY": 2150
+    },
+    "tags": [
+      "unlock"
+    ]
+  },
+  "MONKEY_MADNESS_I": {
+    "why": "Major unlocks and optional training XP from Daero.",
+    "xpRewards": {
+      "ATTACK": 35000,
+      "DEFENCE": 35000,
+      "STRENGTH": 20000,
+      "HITPOINTS": 20000
+    },
+    "tags": [
+      "unlock",
+      "capstone"
+    ]
+  },
+  "UNDERGROUND_PASS": {
+    "minSkills": {
+      "AGILITY": 56
+    },
+    "tags": [
+      "elfline"
+    ]
+  },
+  "REGICIDE": {
+    "minSkills": {
+      "AGILITY": 56
+    },
+    "tags": [
+      "elfline"
+    ]
+  },
+  "MOURNINGS_END_PART_II": {
+    "minSkills": {
+      "AGILITY": 60
+    },
+    "tags": [
+      "elfline"
+    ]
+  },
+  "SONG_OF_THE_ELVES": {
+    "minSkills": {
+      "AGILITY": 70,
+      "CONSTRUCTION": 70,
+      "FARMING": 70,
+      "HERBLORE": 70,
+      "HUNTER": 70,
+      "MINING": 70,
+      "SMITHING": 70,
+      "WOODCUTTING": 70
+    },
+    "tags": [
+      "capstone",
+      "unlock",
+      "sote"
+    ]
+  }
+}

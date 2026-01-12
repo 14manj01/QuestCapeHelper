@@ -1,0 +1,1648 @@
+[
+  {
+    "type": "MINIQUEST",
+    "displayName": "Tutorial Island (miniquest)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Cook's Assistant",
+    "why": "Cooking errand quest; quick XP and progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Sheep Shearer",
+    "why": "Shearing task quest; early XP and progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Misthalin Mystery",
+    "why": "Misthalin quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Prince Ali Rescue",
+    "why": "Prince quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Restless Ghost",
+    "why": "Spooky intro quest; Prayer XP and progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Rune Mysteries",
+    "why": "Runecraft themed quest; unlocks and early progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Imp Catcher",
+    "why": "Imp quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Witch's Potion",
+    "why": "Witch's quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Gertrude's Cat",
+    "why": "Gertrude's quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Children of the Sun",
+    "why": "Unlocks Varlamore access; new region content."
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Natural history quiz (miniquest)"
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Daddy's Home (miniquest)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Dwarf Cannon",
+    "why": "Unlocks dwarf multicannon; major ranged training tool."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Waterfall Quest",
+    "why": "Waterfall quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Tree Gnome Village",
+    "why": "Unlocks spirit tree transport; fast world travel."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Doric's Quest",
+    "why": "Doric's quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Witch's House",
+    "why": "Witch's quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Knight's Sword",
+    "why": "Knight's quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Fletching 1 to 10",
+    "skill": "FLETCHING",
+    "toLevel": 10
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Tourist Trap",
+    "why": "Tourist quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Black Knights' Fortress",
+    "why": "Black quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Druidic Ritual",
+    "why": "Herblore unlock quest; big early account milestone."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recruitment Drive",
+    "why": "Recruitment quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Goblin Diplomacy",
+    "why": "Goblin quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Sleeping Giants",
+    "why": "Sleeping quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Fight Arena",
+    "why": "Fight quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Plague City",
+    "why": "Unlocks Ardougne teleport; excellent travel upgrade."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Monk's Friend",
+    "why": "Monk's quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Hazeel Cult",
+    "why": "Hazeel quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Sheep Herder",
+    "why": "Shearing task quest; early XP and progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Biohazard",
+    "why": "Biohazard quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Construction 8 to 10",
+    "skill": "CONSTRUCTION",
+    "toLevel": 10
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Tower of Life",
+    "why": "Tower quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Tribal Totem",
+    "why": "Tribal quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Death Plateau",
+    "why": "Death quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Merlin's Crystal",
+    "why": "Merlin's quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Holy Grail",
+    "why": "Holy quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Murder Mystery",
+    "why": "Murder quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Grand Tree",
+    "why": "Unlocks gnome gliders; fast travel network."
+  },
+  {
+    "type": "DIARY",
+    "displayName": "Easy Ardougne Diary (use lamp on Agility)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Rag and Bone Man I",
+    "why": "Rag quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Priest in Peril",
+    "why": "Unlocks Morytania access; key early travel milestone."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Nature Spirit",
+    "why": "Nature quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Cooking 14 to 20",
+    "skill": "COOKING",
+    "toLevel": 20
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Ghosts Ahoy",
+    "why": "Spooky intro quest; Prayer XP and progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Making History",
+    "why": "Making quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Lost Tribe",
+    "why": "Lost quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Death to the Dorgeshuun",
+    "why": "Death quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Elemental Workshop I",
+    "why": "Elemental quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Agility 34 to 35",
+    "skill": "AGILITY",
+    "toLevel": 35
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Prayer 33 to 37",
+    "skill": "PRAYER",
+    "toLevel": 37
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Icthlarin's Little Helper",
+    "why": "Icthlarin's quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Golem",
+    "why": "Golem quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Ribbiting Tale of a Lily Pad Labour Dispute",
+    "why": "Ribbiting quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Woodcutting 25 to 36",
+    "skill": "WOODCUTTING",
+    "toLevel": 36
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Crafting 30 to 31",
+    "skill": "CRAFTING",
+    "toLevel": 31
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Lost City",
+    "why": "Unlocks Zanaris; dragon dagger and longsword use."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Fairytale I - Growing Pains (start Fairytale II to fairy rings, then pause)",
+    "why": "Start Fairy II; unlock fairy rings access."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recipe for Disaster - Another Cook's Quest",
+    "why": "Cooking errand quest; quick XP and progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recipe for Disaster - Freeing the Goblin Generals",
+    "why": "Gloves progression; complete subquest for upgrades."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Firemaking 1 to 30",
+    "skill": "FIREMAKING",
+    "toLevel": 30
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Sea Slug",
+    "why": "Sea quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Pandemonium",
+    "why": "Unlocks Sailing skill access; route-specific milestone."
+  },
+  {
+    "type": "NOTE",
+    "displayName": "Train Sailing 5 to 12"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Prying Times",
+    "why": "Unlocks sealed crate opening for Sailing charting."
+  },
+  {
+    "type": "NOTE",
+    "displayName": "Train Sailing 14 to 22"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Current Affairs",
+    "why": "Unlocks current ducks for Sailing charting."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Fishing Contest",
+    "why": "Fishing quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recipe for Disaster - Freeing the Mountain Dwarf",
+    "why": "Gloves progression; complete subquest for upgrades."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Mountain Daughter",
+    "why": "Mountain quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Ratcatchers",
+    "why": "Ratcatchers quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Feud",
+    "why": "Feud quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Death on the Isle",
+    "why": "Death quest; XP rewards and route progression."
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Alfred Grimhand's Barcrawl (miniquest)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Scorpion Catcher",
+    "why": "Scorpion quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Dig Site",
+    "why": "Dig quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Elemental Workshop II",
+    "why": "Elemental quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "A Soul's Bane",
+    "why": "Soul's quest; XP rewards and route progression."
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Enter the Abyss (miniquest)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "X Marks the Spot (lamp on Slayer)",
+    "why": "X quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Pirate's Treasure",
+    "why": "Pirate's quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Client of Kourend (lamps on Slayer)",
+    "why": "Unlocks Kourend teleports and memoirs travel."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Queen of Thieves",
+    "why": "Queen quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Depths of Despair",
+    "why": "Depths quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "A Porcine of Interest",
+    "why": "Porcine quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Wanted!",
+    "why": "Wanted quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Shield of Arrav",
+    "why": "Shield quest; XP rewards and route progression."
+  },
+  {
+    "type": "UNLOCK",
+    "displayName": "Varrock Museum Kudos (lamps on Slayer, claim Mining and Crafting XP)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Bone Voyage",
+    "why": "Unlocks Fossil Island access; strong skilling hub."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Mining 36 to 39",
+    "skill": "MINING",
+    "toLevel": 39
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Watchtower",
+    "why": "Unlocks Watchtower teleport; fast Yanille access."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Giant Dwarf",
+    "why": "Giant quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Forgettable Tale...",
+    "why": "Forgettable quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Another Slice of H.A.M.",
+    "why": "Unlocks Dorgesh train; quick city travel."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Vampyre Slayer",
+    "why": "Vampyre quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Ernest the Chicken",
+    "why": "Ernest quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Demon Slayer",
+    "why": "Unlocks Silverlight; required for demon content."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Shadow of the Storm (use reward on Ranged)",
+    "why": "Unlocks Darklight; demon-slaying weapon path. and progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Prayer 38 to 40",
+    "skill": "PRAYER",
+    "toLevel": 40
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Horror from the Deep",
+    "why": "Horror quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Animal Magnetism",
+    "why": "Unlocks Ava's device; ranged ammo saver."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Creature of Fenkenstrain",
+    "why": "Unlocks Ring of Charos; social manipulation tool."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Big Chompy Bird Hunting",
+    "why": "Big quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Jungle Potion",
+    "why": "Jungle quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Shilo Village",
+    "why": "Unlocks Shilo carts; easy Karamja travel."
+  },
+  {
+    "type": "DIARY",
+    "displayName": "Easy Karamja Diary (lamp on Slayer)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Zogre Flesh Eaters",
+    "why": "Zogre quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Observatory Quest",
+    "why": "Observatory quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Ranged 33 to 37",
+    "skill": "RANGED",
+    "toLevel": 37
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Spirits of the Elid",
+    "why": "Spirits quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Garden of Tranquillity",
+    "why": "Garden quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Enlightened Journey",
+    "why": "Unlocks balloon transport system; convenient travel."
+  },
+  {
+    "type": "UNLOCK",
+    "displayName": "Balloon transport to Crafting Guild"
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Firemaking 34 to 40",
+    "skill": "FIREMAKING",
+    "toLevel": 40
+  },
+  {
+    "type": "UNLOCK",
+    "displayName": "Balloon transport to Varrock"
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Firemaking 40 to 49",
+    "skill": "FIREMAKING",
+    "toLevel": 49
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Romeo & Juliet",
+    "why": "Romeo quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Tears of Guthix",
+    "why": "Unlocks weekly Tears minigame; lowest-skill XP."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Prayer 41 to 43",
+    "skill": "PRAYER",
+    "toLevel": 43
+  },
+  {
+    "type": "QUEST",
+    "displayName": "In Search of the Myreque",
+    "why": "Search quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Shades of Mort'ton",
+    "why": "Shades quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "In Aid of the Myreque",
+    "why": "Aid quest; XP rewards and route progression."
+  },
+  {
+    "type": "NOTE",
+    "displayName": "Hand in Herbi Flax diary (Herblore tick)"
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Skippy and the Mogres (miniquest)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Troll Stronghold",
+    "why": "Troll quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Troll Romance",
+    "why": "Troll quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Strength 38 to 40",
+    "skill": "STRENGTH",
+    "toLevel": 40
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Darkness of Hallowvale (use rewards on Slayer)",
+    "why": "Darkness quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Agility 43 to 56 (recommended via Graceful)",
+    "skill": "AGILITY",
+    "toLevel": 56
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Underground Pass",
+    "why": "Unlocks Iban's staff; strong early magic weapon."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Regicide",
+    "why": "Unlocks Tirannwn access; elf questline progress."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Dragon Slayer I",
+    "why": "Gear milestone; unlocks rune and d'hide bodies."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Fremennik Trials",
+    "why": "Unlocks Neitiznot and Jatizso access. and progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Construction 19 to 20",
+    "skill": "CONSTRUCTION",
+    "toLevel": 20
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Fremennik Isles (choose Defence for both rewards)",
+    "why": "Unlocks helm of Neitiznot; strong melee helm."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recipe for Disaster - Freeing Evil Dave",
+    "why": "Gloves progression; complete subquest for upgrades."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recipe for Disaster - Freeing Pirate Pete",
+    "why": "Gloves progression; complete subquest for upgrades."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Tai Bwo Wannai Trio",
+    "why": "Unlocks karambwan cooking; strong food option."
+  },
+  {
+    "type": "DIARY",
+    "displayName": "Easy Kandarin Diary (lamp on Smithing)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Contact! (use combat lamps on Magic)",
+    "why": "Contact quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Ranged 37 to 40",
+    "skill": "RANGED",
+    "toLevel": 40
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Temple of Ikov",
+    "why": "Temple quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Magic 40 to 46",
+    "skill": "MAGIC",
+    "toLevel": 46
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Eyes of Glouphrie",
+    "why": "Unlocks crystal saw; strong Construction boost."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Temple of the Eye",
+    "why": "Temple quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "One Small Favour (lamps on Slayer)",
+    "why": "One quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Hunter 9 to 12",
+    "skill": "HUNTER",
+    "toLevel": 12
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Ascent of Arceuus",
+    "why": "Ascent quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Tale of the Righteous",
+    "why": "Tale quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Forsaken Tower",
+    "why": "Forsaken quest; XP rewards and route progression."
+  },
+  {
+    "type": "DIARY",
+    "displayName": "Easy Desert Diary (lamps on Smithing)"
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Smithing 44 to 50",
+    "skill": "SMITHING",
+    "toLevel": 50
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Between a Rock...",
+    "why": "Between quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Slug Menace",
+    "why": "Unlocks proselyte armour; strong prayer gear."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Getting Ahead",
+    "why": "Getting quest; XP rewards and route progression."
+  },
+  {
+    "type": "UNLOCK",
+    "displayName": "Museum Camp (lamp on Herblore)"
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Construction 32 to 37",
+    "skill": "CONSTRUCTION",
+    "toLevel": 37
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Cold War",
+    "why": "Cold quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Crafting 45 to 49",
+    "skill": "CRAFTING",
+    "toLevel": 49
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Hand in the Sand",
+    "why": "Hand quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Crafting 49 to 50",
+    "skill": "CRAFTING",
+    "toLevel": 50
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Enakhra's Lament",
+    "why": "Enakhra's quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Eadgar's Ruse",
+    "why": "Unlocks Trollheim teleport; fast troll access."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "My Arm's Big Adventure",
+    "why": "My quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Garden of Death",
+    "why": "Garden quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Rag and Bone Man II",
+    "why": "Rag quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Prayer 43 to 45",
+    "skill": "PRAYER",
+    "toLevel": 45
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Fishing 33 to 50",
+    "skill": "FISHING",
+    "toLevel": 50
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Farming 38 to 40",
+    "skill": "FARMING",
+    "toLevel": 40
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Slayer 40 to 42",
+    "skill": "SLAYER",
+    "toLevel": 42
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Rum Deal",
+    "why": "Rum quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Cabin Fever",
+    "why": "Unlocks Mos Le'Harmless access; pirate content."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Meat and Greet",
+    "why": "Meat quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Cooking 39 to 40",
+    "skill": "COOKING",
+    "toLevel": 40
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recipe for Disaster - Freeing the Lumbridge Guide",
+    "why": "Gloves progression; complete subquest for upgrades."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Cooking 40 to 42",
+    "skill": "COOKING",
+    "toLevel": 42
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recipe for Disaster - Freeing Skrach Uglogwee",
+    "why": "Gloves progression; complete subquest for upgrades."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Cooking 42 to 50",
+    "skill": "COOKING",
+    "toLevel": 50
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Mining 43 to 50",
+    "skill": "MINING",
+    "toLevel": 50
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Heroes' Quest",
+    "why": "Unlocks dragon mace and battleaxe use."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Throne of Miscellania",
+    "why": "Unlocks Managing Miscellania; passive resources. and progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Royal Trouble",
+    "why": "Expands Miscellania; more rewards and management."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Haunted Mine",
+    "why": "Unlocks salve amulet; strong undead damage boost."
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Lair of Tarn Razorlor (miniquest)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Monkey Madness I (take Daero XP)",
+    "why": "Ape Atoll access; dragon scimitar unlock milestone."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Ethically Acquired Antiquities",
+    "why": "Ethically quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Twilight's Promise",
+    "why": "Unlocks Quetzal transport; faster Varlamore travel."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Ranged 43 to 60",
+    "skill": "RANGED",
+    "toLevel": 60
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Thieving 47 to 50",
+    "skill": "THIEVING",
+    "toLevel": 50
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Roving Elves",
+    "why": "Roving quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Mourning's End Part I",
+    "why": "Unlocks Lletya; progresses teleport crystal access."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Mourning's End Part II",
+    "why": "Unlocks Lletya; progresses teleport crystal access."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Magic 48 to 50",
+    "skill": "MAGIC",
+    "toLevel": 50
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Firemaking 49 to 50",
+    "skill": "FIREMAKING",
+    "toLevel": 50
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Desert Treasure I",
+    "why": "Unlocks Ancient Magicks; major combat spellbook."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Magic 51 to 55",
+    "skill": "MAGIC",
+    "toLevel": 55
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Family Crest",
+    "why": "Family quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Runecraft 33 to 35",
+    "skill": "RUNECRAFT",
+    "toLevel": 35
+  },
+  {
+    "type": "QUEST",
+    "displayName": "What Lies Below",
+    "why": "What quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Hunter 16 to 27",
+    "skill": "HUNTER",
+    "toLevel": 27
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Eagles' Peak",
+    "why": "Unlocks eagle transport; niche travel options."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "A Tail of Two Cats (lamps on Herblore)",
+    "why": "Tail quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Mining 50 to 52",
+    "skill": "MINING",
+    "toLevel": 52
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Woodcutting 42 to 50",
+    "skill": "WOODCUTTING",
+    "toLevel": 50
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Herblore 40 to 41",
+    "skill": "HERBLORE",
+    "toLevel": 41
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Legends' Quest (use rewards on Herblore)",
+    "why": "Legends' quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Land of the Goblins",
+    "why": "Land quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recipe for Disaster - Freeing Sir Amik Varze",
+    "why": "Gloves progression; complete subquest for upgrades."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Olaf's Quest",
+    "why": "Olaf's quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "A Kingdom Divided (lamp on Slayer)",
+    "why": "Unlocks more Arceuus spells; big utility boost."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "A Taste of Hope (tome on Slayer)",
+    "why": "Unlocks Drakan's medallion; Morytania travel upgrade."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Hunter 29 to 46",
+    "skill": "HUNTER",
+    "toLevel": 46
+  },
+  {
+    "type": "QUEST",
+    "displayName": "At First Light",
+    "why": "At quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Farming 41 to 46",
+    "skill": "FARMING",
+    "toLevel": 46
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Hunter 46 to 50",
+    "skill": "HUNTER",
+    "toLevel": 50
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Fletching 31 to 50",
+    "skill": "FLETCHING",
+    "toLevel": 50
+  },
+  {
+    "type": "UNLOCK",
+    "displayName": "Balloon transport to Castle Wars"
+  },
+  {
+    "type": "DIARY",
+    "displayName": "Medium Ardougne Diary (lamps on Slayer)"
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Curse of the Empty Lord (miniquest)"
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "The General's Shadow (miniquest)"
+  },
+  {
+    "type": "UNLOCK",
+    "displayName": "More Varrock Museum Kudos (lamp on Slayer, claim skill XP)"
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "His Faithful Servants (miniquest)"
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Prayer 49 to 50",
+    "skill": "PRAYER",
+    "toLevel": 50
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Great Brain Robbery (lamp on Slayer)",
+    "why": "Unlocks barrelchest anchor; niche melee weapon."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Scrambled!",
+    "why": "Scrambled quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Fairytale II - Cure a Queen",
+    "why": "Start Fairy II; unlock fairy rings access."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Cooking 51 to 66",
+    "skill": "COOKING",
+    "toLevel": 66
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recipe for Disaster - Freeing King Awowogei",
+    "why": "Gloves progression; complete subquest for upgrades."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Recipe for Disaster - Defeating the Culinaromancer",
+    "why": "Gloves progression; complete subquest for upgrades."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Defence 51 to 60",
+    "skill": "DEFENCE",
+    "toLevel": 60
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Strength 51 to 60",
+    "skill": "STRENGTH",
+    "toLevel": 60
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Perilous Moons",
+    "why": "Unlocks Cam Torum and Neypotzli access."
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Start miniquest: In Search of Knowledge"
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Thieving 54 to 56",
+    "skill": "THIEVING",
+    "toLevel": 56
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Path of Glouphrie",
+    "why": "Unlocks warped sceptre drops access. and progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Mining 52 to 55",
+    "skill": "MINING",
+    "toLevel": 55
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Heart of Darkness",
+    "why": "Unlocks Ruins of Tapoyauik access. and progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Magic 55 to 65",
+    "skill": "MAGIC",
+    "toLevel": 65
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Crafting 52 to 61",
+    "skill": "CRAFTING",
+    "toLevel": 61
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Mining 55 to 60",
+    "skill": "MINING",
+    "toLevel": 60
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Woodcutting 52 to 55",
+    "skill": "WOODCUTTING",
+    "toLevel": 55
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Lunar Diplomacy",
+    "why": "Unlocks Lunar spellbook; powerful utility spells."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Defence 60 to 65",
+    "skill": "DEFENCE",
+    "toLevel": 65
+  },
+  {
+    "type": "QUEST",
+    "displayName": "King's Ransom (lamp on Slayer)",
+    "why": "Unlocks Chivalry and Piety prayers; huge upgrade."
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Knight Waves Training Grounds (miniquest)"
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Magic 65 to 66",
+    "skill": "MAGIC",
+    "toLevel": 66
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Fishing 52 to 57",
+    "skill": "FISHING",
+    "toLevel": 57
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Swan Song",
+    "why": "Swan quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Smithing 52 to 55",
+    "skill": "SMITHING",
+    "toLevel": 55
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Hunter 50 to 52",
+    "skill": "HUNTER",
+    "toLevel": 52
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Below Ice Mountain",
+    "why": "Unlocks Camdozaal ruins and Imcando hammer."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Defender of Varrock (lamp on Slayer)",
+    "why": "Defender quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Smithing 55 to 65",
+    "skill": "SMITHING",
+    "toLevel": 65
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Runecraft 40 to 50",
+    "skill": "RUNECRAFT",
+    "toLevel": 50
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Devious Minds",
+    "why": "Devious quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Woodcutting 55 to 68",
+    "skill": "WOODCUTTING",
+    "toLevel": 68
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Thieving 56 to 58",
+    "skill": "THIEVING",
+    "toLevel": 58
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Grim Tales",
+    "why": "Grim quest; XP rewards and route progression."
+  },
+  {
+    "type": "NOTE",
+    "displayName": "Train Combat level to 85 (recommended also train Slayer)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Dream Mentor (Dreamy lamp on Magic)",
+    "why": "Unlocks advanced Lunar spells; major utility upgrade."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Fishing 59 to 60",
+    "skill": "FISHING",
+    "toLevel": 60
+  },
+  {
+    "type": "DIARY",
+    "displayName": "Medium Karamja Diary (lamp on Slayer)"
+  },
+  {
+    "type": "DIARY",
+    "displayName": "Medium Wilderness Diary (lamp on Slayer)"
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Crafting 61 to 65",
+    "skill": "CRAFTING",
+    "toLevel": 65
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Runecraft 50 to 55",
+    "skill": "RUNECRAFT",
+    "toLevel": 55
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Fremennik Exiles",
+    "why": "Unlocks Neitiznot faceguard; BIS upgrade. and progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Fletching 50 to 60",
+    "skill": "FLETCHING",
+    "toLevel": 60
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Sins of the Father (tome on Slayer)",
+    "why": "Unlocks Darkmeyer and blisterwood flail. and progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Firemaking 50 to 60",
+    "skill": "FIREMAKING",
+    "toLevel": 60
+  },
+  {
+    "type": "UNLOCK",
+    "displayName": "Balloon transport to Grand Tree"
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "In Search of Knowledge (miniquest, lamp on Slayer)"
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Hopespear's Will (miniquest)"
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Agility 61 to 62",
+    "skill": "AGILITY",
+    "toLevel": 62
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Beneath Cursed Sands",
+    "why": "Unlocks ToA access and Keris partisan."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Construction 39 to 41",
+    "skill": "CONSTRUCTION",
+    "toLevel": 41
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Shadows of Custodia",
+    "why": "Unlocks Stalker Den access; later progression."
+  },
+  {
+    "type": "NOTE",
+    "displayName": "Train Sailing 23 to 45"
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Construction 41 to 50",
+    "skill": "CONSTRUCTION",
+    "toLevel": 50
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Troubled Tortugans",
+    "why": "Unlocks The Great Conch access; later content."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Hunter 53 to 60",
+    "skill": "HUNTER",
+    "toLevel": 60
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Agility 63 to 68",
+    "skill": "AGILITY",
+    "toLevel": 68
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Slayer 65 to 69",
+    "skill": "SLAYER",
+    "toLevel": 69
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Crafting 66 to 70",
+    "skill": "CRAFTING",
+    "toLevel": 70
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Monkey Madness II (choose Magic during training)",
+    "why": "Ape Atoll access; dragon scimitar unlock milestone."
+  },
+  {
+    "type": "MINIQUEST",
+    "displayName": "Into the Tombs (miniquest, lamp on Magic)"
+  },
+  {
+    "type": "QUEST",
+    "displayName": "A Night at the Theatre (lamps on Magic)",
+    "why": "Night quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Magic 70 to 75",
+    "skill": "MAGIC",
+    "toLevel": 75
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Mining 60 to 68",
+    "skill": "MINING",
+    "toLevel": 68
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Smithing 65 to 70",
+    "skill": "SMITHING",
+    "toLevel": 70
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Dragon Slayer II (take Ellen XP batches, pick Attack per paste)",
+    "why": "Gear milestone; unlocks rune and d'hide bodies."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Curse of Arrav",
+    "why": "Curse quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Firemaking 60 to 66",
+    "skill": "FIREMAKING",
+    "toLevel": 66
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Making Friends with My Arm",
+    "why": "Unlocks Weiss and basalt teleports travel."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Thieving 63 to 64",
+    "skill": "THIEVING",
+    "toLevel": 64
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Secrets of the North",
+    "why": "Secrets quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Thieving 65 to 66",
+    "skill": "THIEVING",
+    "toLevel": 66
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Final Dawn",
+    "why": "Unlocks Tonali crypt access and Arkan blade."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Thieving 67 to 72",
+    "skill": "THIEVING",
+    "toLevel": 72
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Farming 47 to 65",
+    "skill": "FARMING",
+    "toLevel": 65
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Herblore 56 to 65",
+    "skill": "HERBLORE",
+    "toLevel": 65
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Attack 58 to 65",
+    "skill": "ATTACK",
+    "toLevel": 65
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Strength 61 to 65",
+    "skill": "STRENGTH",
+    "toLevel": 65
+  },
+  {
+    "type": "QUEST",
+    "displayName": "While Guthix Sleeps",
+    "why": "While quest; XP rewards and route progression."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Firemaking 66 to 75",
+    "skill": "FIREMAKING",
+    "toLevel": 75
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Runecraft 57 to 60",
+    "skill": "RUNECRAFT",
+    "toLevel": 60
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Construction 50 to 60",
+    "skill": "CONSTRUCTION",
+    "toLevel": 60
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Desert Treasure II - The Fallen Empire (use lamps on Prayer per paste)",
+    "why": "Unlocks Ancient Magicks; major combat spellbook."
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Construction 60 to 70",
+    "skill": "CONSTRUCTION",
+    "toLevel": 70
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Farming 66 to 70",
+    "skill": "FARMING",
+    "toLevel": 70
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Herblore 66 to 70",
+    "skill": "HERBLORE",
+    "toLevel": 70
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Hunter 64 to 70",
+    "skill": "HUNTER",
+    "toLevel": 70
+  },
+  {
+    "type": "TRAIN",
+    "displayName": "Train Woodcutting 68 to 70",
+    "skill": "WOODCUTTING",
+    "toLevel": 70
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Song of the Elves",
+    "why": "Unlocks Prifddinas access; huge endgame hub."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "Clock Tower",
+    "why": "Clock quest; XP rewards and route progression."
+  },
+  {
+    "type": "QUEST",
+    "displayName": "The Corsair Curse",
+    "why": "Corsair quest; XP rewards and route progression."
+  },
+  {
+    "type": "NOTE",
+    "displayName": "Quest point cape"
+  }
+]
