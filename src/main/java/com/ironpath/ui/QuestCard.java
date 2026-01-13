@@ -95,7 +95,12 @@ public final class QuestCard
         return card;
     }
 
-    public static JPanel compact(QuestEntry entry, QuestState state)
+public static JPanel compact(QuestEntry entry, QuestState state)
+    {
+        return compact(entry, state, -1, -1);
+    }
+
+    public static JPanel compact(QuestEntry entry, QuestState state, int spineIndex, int spineTotal)
     {
         JPanel card = baseCard();
         card.setLayout(new GridBagLayout());
@@ -112,21 +117,59 @@ public final class QuestCard
         JTextArea title = wrapTextFlush(entry.getQuestName(), 12f, true);
         card.add(title, c);
 
-        // Pill (right, fixed)
+        // Right header: progress + pill
         c.gridx = 1;
         c.gridy = 0;
         c.weightx = 0;
         c.fill = GridBagConstraints.NONE;
         c.anchor = GridBagConstraints.NORTHEAST;
         c.insets = new Insets(0, 0, 0, 0);
-        card.add(pillForState(state), c);
 
-        // Reason (full width under title)
+        JPanel right = new JPanel();
+        right.setOpaque(false);
+        right.setLayout(new javax.swing.BoxLayout(right, javax.swing.BoxLayout.Y_AXIS));
+
+        JLabel progress = new JLabel(formatProgressCompact(spineIndex, spineTotal));
+        progress.setFont(progress.getFont().deriveFont(Font.PLAIN, 10f));
+        progress.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+        progress.setAlignmentX(Component.RIGHT_ALIGNMENT);
+
+        JPanel pill = pillForState(state);
+        pill.setAlignmentX(Component.RIGHT_ALIGNMENT);
+
+        if (progress.getText() != null && !progress.getText().isBlank())
+        {
+            right.add(progress);
+            right.add(javax.swing.Box.createVerticalStrut(2));
+        }
+        right.add(pill);
+
+        card.add(right, c);
+
+        // Step line under title (full width)
+        String stepLine = formatProgressLong(spineIndex, spineTotal);
+        if (stepLine != null && !stepLine.isBlank())
+        {
+            c.gridx = 0;
+            c.gridy = 1;
+            c.gridwidth = 2;
+            c.weightx = 1;
+            c.fill = GridBagConstraints.HORIZONTAL;
+            c.anchor = GridBagConstraints.NORTHWEST;
+            c.insets = new Insets(2, 0, 0, 0);
+
+            JLabel step = new JLabel(stepLine);
+            step.setFont(step.getFont().deriveFont(Font.PLAIN, 10.5f));
+            step.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+            card.add(step, c);
+        }
+
+        // Reason (full width under step line)
         String why = entry.getShortWhy();
         if (why != null && !why.isBlank())
         {
             c.gridx = 0;
-            c.gridy = 1;
+            c.gridy = 2;
             c.gridwidth = 2;
             c.weightx = 1;
             c.fill = GridBagConstraints.HORIZONTAL;
@@ -138,6 +181,24 @@ public final class QuestCard
 
         forceFillWidth(card);
         return card;
+    }
+
+    private static String formatProgressCompact(int spineIndex, int spineTotal)
+    {
+        if (spineIndex < 0 || spineTotal <= 0)
+        {
+            return "";
+        }
+        return (spineIndex + 1) + " / " + spineTotal;
+    }
+
+    private static String formatProgressLong(int spineIndex, int spineTotal)
+    {
+        if (spineIndex < 0 || spineTotal <= 0)
+        {
+            return "";
+        }
+        return "Step " + (spineIndex + 1) + " of " + spineTotal;
     }
 
     private static JPanel baseCard()

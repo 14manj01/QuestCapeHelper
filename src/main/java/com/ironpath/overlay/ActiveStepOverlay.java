@@ -3,6 +3,7 @@ package com.ironpath.overlay;
 import com.ironpath.IronmanPathConfig;
 import com.ironpath.model.InfoPlanStep;
 import com.ironpath.model.PlanStep;
+import com.ironpath.model.SpineStepView;
 import com.ironpath.model.PlanStepType;
 import com.ironpath.model.QuestPlanStep;
 import com.ironpath.model.TrainPlanStep;
