@@ -1,0 +1,140 @@
+package com.ironpath.ui;
+
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import net.runelite.client.ui.ColorScheme;
+
+/**
+ * Quest-like card styling for MINIQUEST steps.
+ * Pure UI component: does not change planner behavior.
+ */
+public final class MiniquestCard
+{
+    private MiniquestCard() {}
+
+    public static JPanel compact(String titleText, String detail, int spineIndex, int spineTotal)
+    {
+        JPanel card = baseCard();
+        card.setLayout(new GridBagLayout());
+
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        c.weightx = 1;
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.anchor = GridBagConstraints.NORTHWEST;
+        c.insets = new Insets(0, 0, 0, 8);
+
+        // WRAPPING TITLE (left, takes remaining width)
+        JTextArea title = wrapTextFlush(titleText == null ? "" : titleText, 12f, true);
+        card.add(title, c);
+
+        // Right header: progress only (no quest state pill)
+        c.gridx = 1;
+        c.gridy = 0;
+        c.weightx = 0;
+        c.fill = GridBagConstraints.NONE;
+        c.anchor = GridBagConstraints.NORTHEAST;
+        c.insets = new Insets(0, 0, 0, 0);
+
+        JLabel progress = new JLabel(formatProgressCompact(spineIndex, spineTotal));
+        progress.setFont(progress.getFont().deriveFont(Font.PLAIN, 10f));
+        progress.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+        card.add(progress, c);
+
+        // Step line under title (full width)
+        String stepLine = formatProgressLong(spineIndex, spineTotal);
+        if (stepLine != null && !stepLine.isBlank())
+        {
+            c.gridx = 0;
+            c.gridy = 1;
+            c.gridwidth = 2;
+            c.weightx = 1;
+            c.fill = GridBagConstraints.HORIZONTAL;
+            c.anchor = GridBagConstraints.NORTHWEST;
+            c.insets = new Insets(2, 0, 0, 0);
+
+            JLabel step = new JLabel(stepLine);
+            step.setFont(step.getFont().deriveFont(Font.PLAIN, 10.5f));
+            step.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+            card.add(step, c);
+        }
+
+        // Detail text (full width)
+        if (detail != null && !detail.isBlank())
+        {
+            c.gridx = 0;
+            c.gridy = 2;
+            c.gridwidth = 2;
+            c.weightx = 1;
+            c.fill = GridBagConstraints.HORIZONTAL;
+            c.anchor = GridBagConstraints.NORTHWEST;
+            c.insets = new Insets(6, 0, 0, 0);
+
+            card.add(wrapTextFlush(detail, 11f, false), c);
+        }
+
+        return card;
+    }
+
+    private static String formatProgressCompact(int spineIndex, int spineTotal)
+    {
+        if (spineIndex < 0 || spineTotal <= 0)
+        {
+            return "";
+        }
+        return (spineIndex + 1) + " / " + spineTotal;
+    }
+
+    private static String formatProgressLong(int spineIndex, int spineTotal)
+    {
+        if (spineIndex < 0 || spineTotal <= 0)
+        {
+            return "";
+        }
+        return "Step " + (spineIndex + 1) + " of " + spineTotal;
+    }
+
+    private static JPanel baseCard()
+    {
+        JPanel p = new JPanel();
+        p.setOpaque(true);
+        p.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        p.setBorder(BorderFactory.createCompoundBorder(
+            BorderFactory.createLineBorder(ColorScheme.DARK_GRAY_COLOR),
+            BorderFactory.createEmptyBorder(10, 10, 10, 10)
+        ));
+        p.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
+        return p;
+    }
+
+    private static JTextArea wrapTextFlush(String text, float fontSize, boolean bold)
+    {
+        JTextArea area = new JTextArea(text);
+        area.setRows(1);
+        area.setOpaque(false);
+        area.setEditable(false);
+        area.setFocusable(false);
+
+        area.setLineWrap(true);
+        area.setWrapStyleWord(true);
+
+        Font f = new JLabel().getFont().deriveFont(bold ? Font.BOLD : Font.PLAIN, fontSize);
+        area.setFont(f);
+        area.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+
+        area.setMargin(new Insets(0, 0, 0, 0));
+        area.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 8));
+        // Keep preferred width small so the card never exceeds the sidebar.
+        area.setColumns(1);
+
+        return area;
+    }
+}
