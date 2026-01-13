@@ -3,6 +3,7 @@ package com.ironpath.overlay;
 import com.ironpath.IronmanPathConfig;
 import com.ironpath.model.InfoPlanStep;
 import com.ironpath.model.PlanStep;
+import com.ironpath.model.SpineStepView;
 import com.ironpath.model.PlanStepType;
 import com.ironpath.model.QuestPlanStep;
 import com.ironpath.model.TrainPlanStep;
@@ -73,19 +74,23 @@ public class ActiveStepOverlay extends OverlayPanel
             return null;
         }
 
-        final List<PlanStep> next = planService.buildNextSteps(routeService.getSpine(), 1);
+        final List<SpineStepView> next = planService.buildNextStepViews(routeService.getSpine(), 1);
         if (next.isEmpty())
         {
             return null;
         }
 
-        final PlanStep step = next.get(0);
+        final SpineStepView view = next.get(0);
+        final PlanStep step = view.getStep();
         final PanelComponent pc = getPanelComponent();
         pc.getChildren().clear();
 
         pc.getChildren().add(TitleComponent.builder().text("Active step").build());
 
-        // Quest
+        final int stepNum = view.getSpineIndex() + 1;
+        final int total = view.getSpineTotal();
+        pc.getChildren().add(LineComponent.builder().left("").right(stepNum + " / " + total).build());
+// Quest
         if (step instanceof QuestPlanStep)
         {
             QuestPlanStep q = (QuestPlanStep) step;

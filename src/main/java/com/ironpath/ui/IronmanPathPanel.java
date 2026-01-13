@@ -2,6 +2,7 @@ package com.ironpath.ui;
 
 import com.ironpath.model.InfoPlanStep;
 import com.ironpath.model.PlanStep;
+import com.ironpath.model.SpineStepView;
 import com.ironpath.model.PlanStepType;
 import com.ironpath.model.QuestEntry;
 import com.ironpath.model.RouteStep;
@@ -82,7 +83,7 @@ public class IronmanPathPanel extends PluginPanel {
             final String query = normalize(searchField.getText());
 
             List<RouteStep> spine = routeService.getSpine();
-            List<PlanStep> next = planService.buildNextSteps(spine, NEXT_STEPS);
+            List<SpineStepView> next = planService.buildNextStepViews(spine, NEXT_STEPS);
 
             SwingUtilities.invokeLater(() ->
             {
@@ -144,7 +145,7 @@ public class IronmanPathPanel extends PluginPanel {
         return section;
     }
 
-    private JPanel renderNext(List<PlanStep> steps, String query) {
+    private JPanel renderNext(List<SpineStepView> steps, String query) {
         JPanel body = new JPanel();
         // No extra right padding; the scrollpane viewport already accounts for the scrollbar.
         // Keeping this at 0 prevents an empty strip on the right side.
@@ -153,12 +154,13 @@ public class IronmanPathPanel extends PluginPanel {
         body.setLayout(new BoxLayout(body, BoxLayout.Y_AXIS));
 
         int shown = 0;
-        for (PlanStep s : steps) {
+        for (SpineStepView v : steps) {
+            PlanStep s = v.getStep();
             if (!matches(s, query)) {
                 continue;
             }
 
-            JPanel card = PlanStepCard.compact(s);
+            JPanel card = PlanStepCard.compact(v);
             forceFillWidth(card);
             body.add(card);
             body.add(Box.createVerticalStrut(6));
