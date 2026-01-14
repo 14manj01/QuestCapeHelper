@@ -1,7 +1,20 @@
 # Optimal Quest Order 
 
-A RuneLite Plugin Hub compliant progression helper that follows the  Optimal Quest  Order to minimize the need to manually train levels on the way to a Quest Cape and Level 126.
+The goal of the Optimal Quest Order is to minimize unnecessary manual training on the way to a Quest Cape and ultimately level 126, by completing quests at points where their experience rewards naturally satisfy future requirements. Rather than grinding skills early, the guide sequences quests so that experience from quest rewards does as much of the work as possible.
 
+This plugin does not attempt to optimize, reorder, or “solve” progression on its own. Instead, it faithfully walks a recommended order (near exactly the wiki's) step-by-step, showing you exactly what to do next and why it matters in the broader progression.
+
+Each step includes concise context explaining:
+
+What the quest or miniquest unlocks
+
+Why it appears at that point in the route
+
+How it contributes to long-term progression
+
+For quest and miniquest steps, the plugin provides a Quest Guide button that links directly to the relevant OSRS Wiki article. This allows you to open the full walkthrough instantly without leaving the game or searching manually. These links are stored per-step in the route data, ensuring accuracy and allowing future refinement or customization.
+
+By combining a strict quest order, minimal assumptions, and direct access to official wiki guidance, the plugin acts as a reliable companion for players who want a clean, efficient, and transparent path through Old School RuneScape’s quest progression.
 This plugin is not a solver and not an optimizer. It does not reorder steps, infer training, or generate new requirements. It walks the guide in order and shows you the next unfinished steps.
 
 ---
