@@ -13,6 +13,7 @@ public final class InfoPlanStep implements PlanStep
     private final PlanStepType type;
     private final String title;
     private final String detail;
+    private final String wikiUrl;
 
     // Optional fields (used by TRAIN/LAMP/DIARY guidance)
     private final Skill skill;
@@ -25,6 +26,7 @@ public final class InfoPlanStep implements PlanStep
         this.type = b.type;
         this.title = b.title;
         this.detail = b.detail;
+        this.wikiUrl = b.wikiUrl;
         this.skill = b.skill;
         this.fromLevel = b.fromLevel;
         this.toLevel = b.toLevel;
@@ -45,6 +47,11 @@ public final class InfoPlanStep implements PlanStep
     public String getDetail()
     {
         return detail;
+    }
+
+    public String getWikiUrl()
+    {
+        return wikiUrl;
     }
 
     public Skill getSkill()
@@ -77,6 +84,7 @@ public final class InfoPlanStep implements PlanStep
         private final PlanStepType type;
         private String title;
         private String detail;
+        private String wikiUrl;
         private Skill skill;
         private Integer fromLevel;
         private Integer toLevel;
@@ -96,6 +104,12 @@ public final class InfoPlanStep implements PlanStep
         public Builder detail(String detail)
         {
             this.detail = detail;
+            return this;
+        }
+
+        public Builder wikiUrl(String wikiUrl)
+        {
+            this.wikiUrl = wikiUrl;
             return this;
         }
 

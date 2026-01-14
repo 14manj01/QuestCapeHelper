@@ -29,6 +29,7 @@ public final class RouteStep
     // Generic display
     private final String displayName;
     private final String why;
+    private final String wikiUrl;
 
     // Optional overrides; primarily used for filler tagging for appended quests.
     private final Set<String> tagsOverride;
@@ -42,6 +43,7 @@ public final class RouteStep
         this.toLevel = b.toLevel;
         this.displayName = b.displayName;
         this.why = b.why;
+        this.wikiUrl = b.wikiUrl;
         this.tagsOverride = b.tagsOverride == null ? Set.of() : Collections.unmodifiableSet(b.tagsOverride);
         this.minSkillsOverride = b.minSkillsOverride == null ? Map.of() : Collections.unmodifiableMap(b.minSkillsOverride);
     }
@@ -76,6 +78,11 @@ public final class RouteStep
         return why;
     }
 
+    public String getWikiUrl()
+    {
+        return wikiUrl;
+    }
+
     public Set<String> getTagsOverride()
     {
         return tagsOverride;
@@ -100,6 +107,7 @@ public final class RouteStep
         private Integer toLevel;
         private String displayName;
         private String why;
+        private String wikiUrl;
         private Set<String> tagsOverride;
         private Map<Skill, Integer> minSkillsOverride;
 
@@ -135,6 +143,12 @@ public final class RouteStep
         public Builder why(String why)
         {
             this.why = why;
+            return this;
+        }
+
+        public Builder wikiUrl(String wikiUrl)
+        {
+            this.wikiUrl = wikiUrl;
             return this;
         }
 

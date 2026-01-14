@@ -3,6 +3,7 @@ package com.ironpath.service;
 import com.google.inject.Singleton;
 import com.ironpath.model.InfoPlanStep;
 import com.ironpath.model.PlanStep;
+import com.ironpath.model.SpineStepView;
 import com.ironpath.model.PlanStepType;
 import com.ironpath.model.QuestEntry;
 import com.ironpath.model.QuestPlanStep;
@@ -67,7 +68,18 @@ public class ProgressionPlanService
     
     public List<PlanStep> buildNextSteps(List<RouteStep> spine, int maxSteps)
     {
-        final List<PlanStep> steps = new ArrayList<>();
+        List<SpineStepView> views = buildNextStepViews(spine, maxSteps);
+        List<PlanStep> steps = new ArrayList<>(views.size());
+        for (SpineStepView v : views)
+        {
+            steps.add(v.getStep());
+        }
+        return steps;
+    }
+
+    public List<SpineStepView> buildNextStepViews(List<RouteStep> spine, int maxSteps)
+    {
+        final List<SpineStepView> steps = new ArrayList<>();
         if (spine == null || spine.isEmpty() || maxSteps <= 0)
         {
             return steps;
@@ -81,25 +93,20 @@ public class ProgressionPlanService
                 continue;
             }
 
-            if (shouldSkip(step))
-            {
-                continue;
-            }
-
             final PlanStepType type = step.getType();
 
-            // Quests are authoritative via the quest journal.
+            // QUEST steps: only skip if the journal says finished.
             if (type == PlanStepType.QUEST && step.getQuest() != null)
             {
                 final Quest q = step.getQuest();
-                final QuestState state = statusService.getState(new QuestEntry(q, mergedWhy(step)));
+                final QuestState state = statusService.getState(new QuestEntry(q, mergedWhy(step), resolveWikiUrl(step, q.getName())));
                 if (state == QuestState.FINISHED)
                 {
                     continue;
                 }
 
-                final QuestEntry qe = new QuestEntry(q, mergedWhy(step));
-                steps.add(new QuestPlanStep(qe, state));
+                final QuestEntry qe = new QuestEntry(q, mergedWhy(step), resolveWikiUrl(step, q.getName()));
+                steps.add(new SpineStepView(new QuestPlanStep(qe, state), i, spine.size()));
                 continue;
             }
 
@@ -109,9 +116,11 @@ public class ProgressionPlanService
                 continue;
             }
 
-            if (type == PlanStepType.TRAIN && step.getSkill() != null && step.getToLevel() != null)
+            // TRAIN steps: skip if current level meets the target.
+            if (type == PlanStepType.TRAIN && step.getSkill() != null)
             {
                 final Skill skill = step.getSkill();
+                // Use real levels only; temporary boosts should not suppress TRAIN steps.
                 final int have = safeRealLevel(skill);
                 final int target = step.getToLevel();
                 if (have >= target)
@@ -119,25 +128,26 @@ public class ProgressionPlanService
                     continue;
                 }
 
-                steps.add(new TrainPlanStep(skill, have, target, mergedWhy(step)));
+                steps.add(new SpineStepView(new TrainPlanStep(skill, have, target, mergedWhy(step)), i, spine.size()));
                 continue;
             }
 
             // Generic informational step.
             final String why = mergedWhy(step);
-            steps.add(InfoPlanStep.builder(type)
+            steps.add(new SpineStepView(InfoPlanStep.builder(type)
                 .title(step.getDisplayName())
                 .detail(why)
-                .build());
+                .wikiUrl(step.getWikiUrl())
+                .build(), i, spine.size()));
 
             // If the step text includes lamp instructions, surface them explicitly.
             final String lamp = extractLampInstruction(why);
             if (lamp != null)
             {
-                steps.add(InfoPlanStep.builder(PlanStepType.LAMP)
+                steps.add(new SpineStepView(InfoPlanStep.builder(PlanStepType.LAMP)
                     .title("Use lamp")
                     .detail(lamp)
-                    .build());
+                    .build(), i, spine.size()));
             }
         }
 
@@ -324,6 +334,33 @@ public class ProgressionPlanService
                 return "Recommended training checkpoint in the OSRS Wiki Optimal Quest Guide.";
             default:
                 return "Follow the OSRS Wiki Optimal Quest Guide order.";
+        }
+    }
+
+    private String resolveWikiUrl(RouteStep step, String questName)
+    {
+        String url = step == null ? null : step.getWikiUrl();
+        if (url != null && !url.trim().isEmpty())
+        {
+            return url.trim();
+        }
+
+        if (questName == null || questName.trim().isEmpty())
+        {
+            return "https://oldschool.runescape.wiki/";
+        }
+
+        // Default to the OSRS Wiki article URL for the quest name.
+        // Replace spaces with underscores and URL-encode reserved characters (apostrophes, etc.).
+        final String slug = questName.trim().replace(' ', '_');
+        try
+        {
+            return "https://oldschool.runescape.wiki/w/" + java.net.URLEncoder.encode(slug, java.nio.charset.StandardCharsets.UTF_8)
+                    .replace("+", "%20");
+        }
+        catch (Exception e)
+        {
+            return "https://oldschool.runescape.wiki/";
         }
     }
 

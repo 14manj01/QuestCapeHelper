@@ -30,6 +30,7 @@ public final class QuestEntry
      */
     private final String questName;
     private final String shortWhy;
+    private final String wikiUrl;
 
     /** Minimum tracked skill requirements (subset). */
     private final Map<Skill, Integer> minSkills;
@@ -45,17 +46,23 @@ public final class QuestEntry
 
     public QuestEntry(Quest quest, String shortWhy)
     {
-        this(quest, shortWhy, Map.of(), List.of(), Map.of(), Set.of());
+        this(quest, shortWhy, null, Map.of(), List.of(), Map.of(), Set.of());
+    }
+
+    public QuestEntry(Quest quest, String shortWhy, String wikiUrl)
+    {
+        this(quest, shortWhy, wikiUrl, Map.of(), List.of(), Map.of(), Set.of());
     }
 
     public QuestEntry(Quest quest, String shortWhy, Map<Skill, Integer> minSkills)
     {
-        this(quest, shortWhy, minSkills, List.of(), Map.of(), Set.of());
+        this(quest, shortWhy, null, minSkills, List.of(), Map.of(), Set.of());
     }
 
     public QuestEntry(
             Quest quest,
             String shortWhy,
+            String wikiUrl,
             Map<Skill, Integer> minSkills,
             List<String> prereqQuestNames,
             Map<Skill, Integer> xpRewards,
@@ -64,6 +71,7 @@ public final class QuestEntry
         this.quest = quest;
         this.questName = quest != null ? quest.getName() : "";
         this.shortWhy = shortWhy;
+        this.wikiUrl = wikiUrl;
         this.minSkills = minSkills == null ? Collections.emptyMap() : Collections.unmodifiableMap(minSkills);
         this.prereqQuestNames = prereqQuestNames == null ? List.of() : Collections.unmodifiableList(new ArrayList<>(prereqQuestNames));
         this.xpRewards = xpRewards == null ? Collections.emptyMap() : Collections.unmodifiableMap(xpRewards);
@@ -72,12 +80,12 @@ public final class QuestEntry
 
     public QuestEntry(String questName, String shortWhy)
     {
-        this(null, questName, shortWhy, Map.of(), List.of(), Map.of(), Set.of());
+        this(null, questName, shortWhy, null, Map.of(), List.of(), Map.of(), Set.of());
     }
 
     public QuestEntry(String questName, String shortWhy, Map<Skill, Integer> minSkills)
     {
-        this(null, questName, shortWhy, minSkills, List.of(), Map.of(), Set.of());
+        this(null, questName, shortWhy, null, minSkills, List.of(), Map.of(), Set.of());
     }
 
     public QuestEntry(
@@ -88,13 +96,14 @@ public final class QuestEntry
             Map<Skill, Integer> xpRewards,
             Set<String> tags)
     {
-        this(null, questName, shortWhy, minSkills, prereqQuestNames, xpRewards, tags);
+        this(null, questName, shortWhy, null, minSkills, prereqQuestNames, xpRewards, tags);
     }
 
     private QuestEntry(
             Quest quest,
             String questName,
             String shortWhy,
+            String wikiUrl,
             Map<Skill, Integer> minSkills,
             List<String> prereqQuestNames,
             Map<Skill, Integer> xpRewards,
@@ -103,6 +112,7 @@ public final class QuestEntry
         this.quest = quest;
         this.questName = questName;
         this.shortWhy = shortWhy;
+        this.wikiUrl = wikiUrl;
         this.minSkills = minSkills == null ? Collections.emptyMap() : Collections.unmodifiableMap(minSkills);
         this.prereqQuestNames = prereqQuestNames == null ? List.of() : Collections.unmodifiableList(new ArrayList<>(prereqQuestNames));
         this.xpRewards = xpRewards == null ? Collections.emptyMap() : Collections.unmodifiableMap(xpRewards);
@@ -122,6 +132,11 @@ public final class QuestEntry
     public String getShortWhy()
     {
         return shortWhy;
+    }
+
+    public String getWikiUrl()
+    {
+        return wikiUrl;
     }
 
     public Map<Skill, Integer> getMinSkills()

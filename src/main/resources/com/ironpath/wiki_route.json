@@ -1,95 +1,114 @@
 [
   {
     "type": "MINIQUEST",
-    "displayName": "Tutorial Island (miniquest)"
+    "displayName": "Tutorial Island (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tutorial_Island"
   },
   {
     "type": "QUEST",
     "displayName": "Cook's Assistant",
-    "why": "Cooking errand quest; quick XP and progression."
+    "why": "Cooking errand quest; quick XP and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Cook%27s_Assistant"
   },
   {
     "type": "QUEST",
     "displayName": "Sheep Shearer",
-    "why": "Shearing task quest; early XP and progression."
+    "why": "Shearing task quest; early XP and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sheep_Shearer"
   },
   {
     "type": "QUEST",
     "displayName": "Misthalin Mystery",
-    "why": "Misthalin quest; XP rewards and route progression."
+    "why": "Misthalin quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Misthalin_Mystery"
   },
   {
     "type": "QUEST",
     "displayName": "Prince Ali Rescue",
-    "why": "Prince quest; XP rewards and route progression."
+    "why": "Prince quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Prince_Ali_Rescue"
   },
   {
     "type": "QUEST",
     "displayName": "The Restless Ghost",
-    "why": "Spooky intro quest; Prayer XP and progression."
+    "why": "Spooky intro quest; Prayer XP and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Restless_Ghost"
   },
   {
     "type": "QUEST",
     "displayName": "Rune Mysteries",
-    "why": "Runecraft themed quest; unlocks and early progression."
+    "why": "Runecraft themed quest; unlocks and early progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Rune_Mysteries"
   },
   {
     "type": "QUEST",
     "displayName": "Imp Catcher",
-    "why": "Imp quest; XP rewards and route progression."
+    "why": "Imp quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Imp_Catcher"
   },
   {
     "type": "QUEST",
     "displayName": "Witch's Potion",
-    "why": "Witch's quest; XP rewards and route progression."
+    "why": "Witch's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Witch%27s_Potion"
   },
   {
     "type": "QUEST",
     "displayName": "Gertrude's Cat",
-    "why": "Gertrude's quest; XP rewards and route progression."
+    "why": "Gertrude's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Gertrude%27s_Cat"
   },
   {
     "type": "QUEST",
     "displayName": "Children of the Sun",
-    "why": "Unlocks Varlamore access; new region content."
+    "why": "Unlocks Varlamore access; new region content.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Children_of_the_Sun"
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Natural history quiz (miniquest)"
+    "displayName": "Natural history quiz (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Natural_history_quiz"
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Daddy's Home (miniquest)"
+    "displayName": "Daddy's Home (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Daddy%27s_Home"
   },
   {
     "type": "QUEST",
     "displayName": "Dwarf Cannon",
-    "why": "Unlocks dwarf multicannon; major ranged training tool."
+    "why": "Unlocks dwarf multicannon; major ranged training tool.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dwarf_Cannon"
   },
   {
     "type": "QUEST",
     "displayName": "Waterfall Quest",
-    "why": "Waterfall quest; XP rewards and route progression."
+    "why": "Waterfall quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Waterfall_Quest"
   },
   {
     "type": "QUEST",
     "displayName": "Tree Gnome Village",
-    "why": "Unlocks spirit tree transport; fast world travel."
+    "why": "Unlocks spirit tree transport; fast world travel.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tree_Gnome_Village"
   },
   {
     "type": "QUEST",
     "displayName": "Doric's Quest",
-    "why": "Doric's quest; XP rewards and route progression."
+    "why": "Doric's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Doric%27s_Quest"
   },
   {
     "type": "QUEST",
     "displayName": "Witch's House",
-    "why": "Witch's quest; XP rewards and route progression."
+    "why": "Witch's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Witch%27s_House"
   },
   {
     "type": "QUEST",
     "displayName": "The Knight's Sword",
-    "why": "Knight's quest; XP rewards and route progression."
+    "why": "Knight's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Knight%27s_Sword"
   },
   {
     "type": "TRAIN",
@@ -100,62 +119,74 @@
   {
     "type": "QUEST",
     "displayName": "The Tourist Trap",
-    "why": "Tourist quest; XP rewards and route progression."
+    "why": "Tourist quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Tourist_Trap"
   },
   {
     "type": "QUEST",
     "displayName": "Black Knights' Fortress",
-    "why": "Black quest; XP rewards and route progression."
+    "why": "Black quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Black_Knights%27_Fortress"
   },
   {
     "type": "QUEST",
     "displayName": "Druidic Ritual",
-    "why": "Herblore unlock quest; big early account milestone."
+    "why": "Herblore unlock quest; big early account milestone.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Druidic_Ritual"
   },
   {
     "type": "QUEST",
     "displayName": "Recruitment Drive",
-    "why": "Recruitment quest; XP rewards and route progression."
+    "why": "Recruitment quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recruitment_Drive"
   },
   {
     "type": "QUEST",
     "displayName": "Goblin Diplomacy",
-    "why": "Goblin quest; XP rewards and route progression."
+    "why": "Goblin quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Goblin_Diplomacy"
   },
   {
     "type": "QUEST",
     "displayName": "Sleeping Giants",
-    "why": "Sleeping quest; XP rewards and route progression."
+    "why": "Sleeping quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sleeping_Giants"
   },
   {
     "type": "QUEST",
     "displayName": "Fight Arena",
-    "why": "Fight quest; XP rewards and route progression."
+    "why": "Fight quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fight_Arena"
   },
   {
     "type": "QUEST",
     "displayName": "Plague City",
-    "why": "Unlocks Ardougne teleport; excellent travel upgrade."
+    "why": "Unlocks Ardougne teleport; excellent travel upgrade.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Plague_City"
   },
   {
     "type": "QUEST",
     "displayName": "Monk's Friend",
-    "why": "Monk's quest; XP rewards and route progression."
+    "why": "Monk's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Monk%27s_Friend"
   },
   {
     "type": "QUEST",
     "displayName": "Hazeel Cult",
-    "why": "Hazeel quest; XP rewards and route progression."
+    "why": "Hazeel quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Hazeel_Cult"
   },
   {
     "type": "QUEST",
     "displayName": "Sheep Herder",
-    "why": "Shearing task quest; early XP and progression."
+    "why": "Shearing task quest; early XP and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sheep_Herder"
   },
   {
     "type": "QUEST",
     "displayName": "Biohazard",
-    "why": "Biohazard quest; XP rewards and route progression."
+    "why": "Biohazard quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Biohazard"
   },
   {
     "type": "TRAIN",
@@ -166,37 +197,44 @@
   {
     "type": "QUEST",
     "displayName": "Tower of Life",
-    "why": "Tower quest; XP rewards and route progression."
+    "why": "Tower quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tower_of_Life"
   },
   {
     "type": "QUEST",
     "displayName": "Tribal Totem",
-    "why": "Tribal quest; XP rewards and route progression."
+    "why": "Tribal quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tribal_Totem"
   },
   {
     "type": "QUEST",
     "displayName": "Death Plateau",
-    "why": "Death quest; XP rewards and route progression."
+    "why": "Death quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Death_Plateau"
   },
   {
     "type": "QUEST",
     "displayName": "Merlin's Crystal",
-    "why": "Merlin's quest; XP rewards and route progression."
+    "why": "Merlin's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Merlin%27s_Crystal"
   },
   {
     "type": "QUEST",
     "displayName": "Holy Grail",
-    "why": "Holy quest; XP rewards and route progression."
+    "why": "Holy quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Holy_Grail"
   },
   {
     "type": "QUEST",
     "displayName": "Murder Mystery",
-    "why": "Murder quest; XP rewards and route progression."
+    "why": "Murder quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Murder_Mystery"
   },
   {
     "type": "QUEST",
     "displayName": "The Grand Tree",
-    "why": "Unlocks gnome gliders; fast travel network."
+    "why": "Unlocks gnome gliders; fast travel network.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Grand_Tree"
   },
   {
     "type": "DIARY",
@@ -205,17 +243,20 @@
   {
     "type": "QUEST",
     "displayName": "Rag and Bone Man I",
-    "why": "Rag quest; XP rewards and route progression."
+    "why": "Rag quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Rag_and_Bone_Man_I"
   },
   {
     "type": "QUEST",
     "displayName": "Priest in Peril",
-    "why": "Unlocks Morytania access; key early travel milestone."
+    "why": "Unlocks Morytania access; key early travel milestone.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Priest_in_Peril"
   },
   {
     "type": "QUEST",
     "displayName": "Nature Spirit",
-    "why": "Nature quest; XP rewards and route progression."
+    "why": "Nature quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nature_Spirit"
   },
   {
     "type": "TRAIN",
@@ -226,27 +267,32 @@
   {
     "type": "QUEST",
     "displayName": "Ghosts Ahoy",
-    "why": "Spooky intro quest; Prayer XP and progression."
+    "why": "Spooky intro quest; Prayer XP and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ghosts_Ahoy"
   },
   {
     "type": "QUEST",
     "displayName": "Making History",
-    "why": "Making quest; XP rewards and route progression."
+    "why": "Making quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Making_History"
   },
   {
     "type": "QUEST",
     "displayName": "The Lost Tribe",
-    "why": "Lost quest; XP rewards and route progression."
+    "why": "Lost quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Lost_Tribe"
   },
   {
     "type": "QUEST",
     "displayName": "Death to the Dorgeshuun",
-    "why": "Death quest; XP rewards and route progression."
+    "why": "Death quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Death_to_the_Dorgeshuun"
   },
   {
     "type": "QUEST",
     "displayName": "Elemental Workshop I",
-    "why": "Elemental quest; XP rewards and route progression."
+    "why": "Elemental quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Elemental_Workshop_I"
   },
   {
     "type": "TRAIN",
@@ -263,17 +309,20 @@
   {
     "type": "QUEST",
     "displayName": "Icthlarin's Little Helper",
-    "why": "Icthlarin's quest; XP rewards and route progression."
+    "why": "Icthlarin's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Icthlarin%27s_Little_Helper"
   },
   {
     "type": "QUEST",
     "displayName": "The Golem",
-    "why": "Golem quest; XP rewards and route progression."
+    "why": "Golem quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Golem"
   },
   {
     "type": "QUEST",
     "displayName": "The Ribbiting Tale of a Lily Pad Labour Dispute",
-    "why": "Ribbiting quest; XP rewards and route progression."
+    "why": "Ribbiting quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Ribbiting_Tale_of_a_Lily_Pad_Labour_Dispute"
   },
   {
     "type": "TRAIN",
@@ -290,22 +339,26 @@
   {
     "type": "QUEST",
     "displayName": "Lost City",
-    "why": "Unlocks Zanaris; dragon dagger and longsword use."
+    "why": "Unlocks Zanaris; dragon dagger and longsword use.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Lost_City"
   },
   {
     "type": "QUEST",
     "displayName": "Fairytale I - Growing Pains (start Fairytale II to fairy rings, then pause)",
-    "why": "Start Fairy II; unlock fairy rings access."
+    "why": "Start Fairy II; unlock fairy rings access.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fairytale_I_-_Growing_Pains_(start_Fairytale_II_to_fairy_rings%2C_then_pause)"
   },
   {
     "type": "QUEST",
     "displayName": "Recipe for Disaster - Another Cook's Quest",
-    "why": "Cooking errand quest; quick XP and progression."
+    "why": "Cooking errand quest; quick XP and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster_-_Another_Cook%27s_Quest"
   },
   {
     "type": "QUEST",
     "displayName": "Recipe for Disaster - Freeing the Goblin Generals",
-    "why": "Gloves progression; complete subquest for upgrades."
+    "why": "Gloves progression; complete subquest for upgrades.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster_-_Freeing_the_Goblin_Generals"
   },
   {
     "type": "TRAIN",
@@ -316,12 +369,14 @@
   {
     "type": "QUEST",
     "displayName": "Sea Slug",
-    "why": "Sea quest; XP rewards and route progression."
+    "why": "Sea quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sea_Slug"
   },
   {
     "type": "QUEST",
     "displayName": "Pandemonium",
-    "why": "Unlocks Sailing skill access; route-specific milestone."
+    "why": "Unlocks Sailing skill access; route-specific milestone.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Pandemonium"
   },
   {
     "type": "NOTE",
@@ -330,7 +385,8 @@
   {
     "type": "QUEST",
     "displayName": "Prying Times",
-    "why": "Unlocks sealed crate opening for Sailing charting."
+    "why": "Unlocks sealed crate opening for Sailing charting.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Prying_Times"
   },
   {
     "type": "NOTE",
@@ -339,105 +395,126 @@
   {
     "type": "QUEST",
     "displayName": "Current Affairs",
-    "why": "Unlocks current ducks for Sailing charting."
+    "why": "Unlocks current ducks for Sailing charting.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Current_Affairs"
   },
   {
     "type": "QUEST",
     "displayName": "Fishing Contest",
-    "why": "Fishing quest; XP rewards and route progression."
+    "why": "Fishing quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fishing_Contest"
   },
   {
     "type": "QUEST",
     "displayName": "Recipe for Disaster - Freeing the Mountain Dwarf",
-    "why": "Gloves progression; complete subquest for upgrades."
+    "why": "Gloves progression; complete subquest for upgrades.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster_-_Freeing_the_Mountain_Dwarf"
   },
   {
     "type": "QUEST",
     "displayName": "Mountain Daughter",
-    "why": "Mountain quest; XP rewards and route progression."
+    "why": "Mountain quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mountain_Daughter"
   },
   {
     "type": "QUEST",
     "displayName": "Ratcatchers",
-    "why": "Ratcatchers quest; XP rewards and route progression."
+    "why": "Ratcatchers quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ratcatchers"
   },
   {
     "type": "QUEST",
     "displayName": "The Feud",
-    "why": "Feud quest; XP rewards and route progression."
+    "why": "Feud quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Feud"
   },
   {
     "type": "QUEST",
     "displayName": "Death on the Isle",
-    "why": "Death quest; XP rewards and route progression."
+    "why": "Death quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Death_on_the_Isle"
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Alfred Grimhand's Barcrawl (miniquest)"
+    "displayName": "Alfred Grimhand's Barcrawl (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Alfred_Grimhand%27s_Barcrawl"
   },
   {
     "type": "QUEST",
     "displayName": "Scorpion Catcher",
-    "why": "Scorpion quest; XP rewards and route progression."
+    "why": "Scorpion quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Scorpion_Catcher"
   },
   {
     "type": "QUEST",
     "displayName": "The Dig Site",
-    "why": "Dig quest; XP rewards and route progression."
+    "why": "Dig quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Dig_Site"
   },
   {
     "type": "QUEST",
     "displayName": "Elemental Workshop II",
-    "why": "Elemental quest; XP rewards and route progression."
+    "why": "Elemental quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Elemental_Workshop_II"
   },
   {
     "type": "QUEST",
     "displayName": "A Soul's Bane",
-    "why": "Soul's quest; XP rewards and route progression."
+    "why": "Soul's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/A_Soul%27s_Bane"
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Enter the Abyss (miniquest)"
+    "displayName": "Enter the Abyss (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Enter_the_Abyss"
   },
   {
     "type": "QUEST",
     "displayName": "X Marks the Spot (lamp on Slayer)",
-    "why": "X quest; XP rewards and route progression."
+    "why": "X quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/X_Marks_the_Spot_(lamp_on_Slayer)"
   },
   {
     "type": "QUEST",
     "displayName": "Pirate's Treasure",
-    "why": "Pirate's quest; XP rewards and route progression."
+    "why": "Pirate's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Pirate%27s_Treasure"
   },
   {
     "type": "QUEST",
     "displayName": "Client of Kourend (lamps on Slayer)",
-    "why": "Unlocks Kourend teleports and memoirs travel."
+    "why": "Unlocks Kourend teleports and memoirs travel.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Client_of_Kourend_(lamps_on_Slayer)"
   },
   {
     "type": "QUEST",
     "displayName": "The Queen of Thieves",
-    "why": "Queen quest; XP rewards and route progression."
+    "why": "Queen quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Queen_of_Thieves"
   },
   {
     "type": "QUEST",
     "displayName": "The Depths of Despair",
-    "why": "Depths quest; XP rewards and route progression."
+    "why": "Depths quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Depths_of_Despair"
   },
   {
     "type": "QUEST",
     "displayName": "A Porcine of Interest",
-    "why": "Porcine quest; XP rewards and route progression."
+    "why": "Porcine quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/A_Porcine_of_Interest"
   },
   {
     "type": "QUEST",
     "displayName": "Wanted!",
-    "why": "Wanted quest; XP rewards and route progression."
+    "why": "Wanted quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Wanted%21"
   },
   {
     "type": "QUEST",
     "displayName": "Shield of Arrav",
-    "why": "Shield quest; XP rewards and route progression."
+    "why": "Shield quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Shield_of_Arrav"
   },
   {
     "type": "UNLOCK",
@@ -446,7 +523,8 @@
   {
     "type": "QUEST",
     "displayName": "Bone Voyage",
-    "why": "Unlocks Fossil Island access; strong skilling hub."
+    "why": "Unlocks Fossil Island access; strong skilling hub.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Bone_Voyage"
   },
   {
     "type": "TRAIN",
@@ -457,42 +535,50 @@
   {
     "type": "QUEST",
     "displayName": "Watchtower",
-    "why": "Unlocks Watchtower teleport; fast Yanille access."
+    "why": "Unlocks Watchtower teleport; fast Yanille access.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Watchtower"
   },
   {
     "type": "QUEST",
     "displayName": "The Giant Dwarf",
-    "why": "Giant quest; XP rewards and route progression."
+    "why": "Giant quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Giant_Dwarf"
   },
   {
     "type": "QUEST",
     "displayName": "Forgettable Tale...",
-    "why": "Forgettable quest; XP rewards and route progression."
+    "why": "Forgettable quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Forgettable_Tale..."
   },
   {
     "type": "QUEST",
     "displayName": "Another Slice of H.A.M.",
-    "why": "Unlocks Dorgesh train; quick city travel."
+    "why": "Unlocks Dorgesh train; quick city travel.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Another_Slice_of_H.A.M."
   },
   {
     "type": "QUEST",
     "displayName": "Vampyre Slayer",
-    "why": "Vampyre quest; XP rewards and route progression."
+    "why": "Vampyre quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Vampyre_Slayer"
   },
   {
     "type": "QUEST",
     "displayName": "Ernest the Chicken",
-    "why": "Ernest quest; XP rewards and route progression."
+    "why": "Ernest quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ernest_the_Chicken"
   },
   {
     "type": "QUEST",
     "displayName": "Demon Slayer",
-    "why": "Unlocks Silverlight; required for demon content."
+    "why": "Unlocks Silverlight; required for demon content.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Demon_Slayer"
   },
   {
     "type": "QUEST",
     "displayName": "Shadow of the Storm (use reward on Ranged)",
-    "why": "Unlocks Darklight; demon-slaying weapon path. and progression."
+    "why": "Unlocks Darklight; demon-slaying weapon path. and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Shadow_of_the_Storm_(use_reward_on_Ranged)"
   },
   {
     "type": "TRAIN",
@@ -503,32 +589,38 @@
   {
     "type": "QUEST",
     "displayName": "Horror from the Deep",
-    "why": "Horror quest; XP rewards and route progression."
+    "why": "Horror quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Horror_from_the_Deep"
   },
   {
     "type": "QUEST",
     "displayName": "Animal Magnetism",
-    "why": "Unlocks Ava's device; ranged ammo saver."
+    "why": "Unlocks Ava's device; ranged ammo saver.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Animal_Magnetism"
   },
   {
     "type": "QUEST",
     "displayName": "Creature of Fenkenstrain",
-    "why": "Unlocks Ring of Charos; social manipulation tool."
+    "why": "Unlocks Ring of Charos; social manipulation tool.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Creature_of_Fenkenstrain"
   },
   {
     "type": "QUEST",
     "displayName": "Big Chompy Bird Hunting",
-    "why": "Big quest; XP rewards and route progression."
+    "why": "Big quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Big_Chompy_Bird_Hunting"
   },
   {
     "type": "QUEST",
     "displayName": "Jungle Potion",
-    "why": "Jungle quest; XP rewards and route progression."
+    "why": "Jungle quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Jungle_Potion"
   },
   {
     "type": "QUEST",
     "displayName": "Shilo Village",
-    "why": "Unlocks Shilo carts; easy Karamja travel."
+    "why": "Unlocks Shilo carts; easy Karamja travel.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Shilo_Village"
   },
   {
     "type": "DIARY",
@@ -537,12 +629,14 @@
   {
     "type": "QUEST",
     "displayName": "Zogre Flesh Eaters",
-    "why": "Zogre quest; XP rewards and route progression."
+    "why": "Zogre quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Zogre_Flesh_Eaters"
   },
   {
     "type": "QUEST",
     "displayName": "Observatory Quest",
-    "why": "Observatory quest; XP rewards and route progression."
+    "why": "Observatory quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Observatory_Quest"
   },
   {
     "type": "TRAIN",
@@ -553,17 +647,20 @@
   {
     "type": "QUEST",
     "displayName": "Spirits of the Elid",
-    "why": "Spirits quest; XP rewards and route progression."
+    "why": "Spirits quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Spirits_of_the_Elid"
   },
   {
     "type": "QUEST",
     "displayName": "Garden of Tranquillity",
-    "why": "Garden quest; XP rewards and route progression."
+    "why": "Garden quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Garden_of_Tranquillity"
   },
   {
     "type": "QUEST",
     "displayName": "Enlightened Journey",
-    "why": "Unlocks balloon transport system; convenient travel."
+    "why": "Unlocks balloon transport system; convenient travel.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Enlightened_Journey"
   },
   {
     "type": "UNLOCK",
@@ -588,12 +685,14 @@
   {
     "type": "QUEST",
     "displayName": "Romeo & Juliet",
-    "why": "Romeo quest; XP rewards and route progression."
+    "why": "Romeo quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Romeo_%26_Juliet"
   },
   {
     "type": "QUEST",
     "displayName": "Tears of Guthix",
-    "why": "Unlocks weekly Tears minigame; lowest-skill XP."
+    "why": "Unlocks weekly Tears minigame; lowest-skill XP.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tears_of_Guthix"
   },
   {
     "type": "TRAIN",
@@ -604,17 +703,20 @@
   {
     "type": "QUEST",
     "displayName": "In Search of the Myreque",
-    "why": "Search quest; XP rewards and route progression."
+    "why": "Search quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/In_Search_of_the_Myreque"
   },
   {
     "type": "QUEST",
     "displayName": "Shades of Mort'ton",
-    "why": "Shades quest; XP rewards and route progression."
+    "why": "Shades quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Shades_of_Mort%27ton"
   },
   {
     "type": "QUEST",
     "displayName": "In Aid of the Myreque",
-    "why": "Aid quest; XP rewards and route progression."
+    "why": "Aid quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/In_Aid_of_the_Myreque"
   },
   {
     "type": "NOTE",
@@ -622,17 +724,20 @@
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Skippy and the Mogres (miniquest)"
+    "displayName": "Skippy and the Mogres (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Skippy_and_the_Mogres"
   },
   {
     "type": "QUEST",
     "displayName": "Troll Stronghold",
-    "why": "Troll quest; XP rewards and route progression."
+    "why": "Troll quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Troll_Stronghold"
   },
   {
     "type": "QUEST",
     "displayName": "Troll Romance",
-    "why": "Troll quest; XP rewards and route progression."
+    "why": "Troll quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Troll_Romance"
   },
   {
     "type": "TRAIN",
@@ -643,7 +748,8 @@
   {
     "type": "QUEST",
     "displayName": "Darkness of Hallowvale (use rewards on Slayer)",
-    "why": "Darkness quest; XP rewards and route progression."
+    "why": "Darkness quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Darkness_of_Hallowvale_(use_rewards_on_Slayer)"
   },
   {
     "type": "TRAIN",
@@ -654,22 +760,26 @@
   {
     "type": "QUEST",
     "displayName": "Underground Pass",
-    "why": "Unlocks Iban's staff; strong early magic weapon."
+    "why": "Unlocks Iban's staff; strong early magic weapon.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Underground_Pass"
   },
   {
     "type": "QUEST",
     "displayName": "Regicide",
-    "why": "Unlocks Tirannwn access; elf questline progress."
+    "why": "Unlocks Tirannwn access; elf questline progress.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Regicide"
   },
   {
     "type": "QUEST",
     "displayName": "Dragon Slayer I",
-    "why": "Gear milestone; unlocks rune and d'hide bodies."
+    "why": "Gear milestone; unlocks rune and d'hide bodies.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dragon_Slayer_I"
   },
   {
     "type": "QUEST",
     "displayName": "The Fremennik Trials",
-    "why": "Unlocks Neitiznot and Jatizso access. and progression."
+    "why": "Unlocks Neitiznot and Jatizso access. and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Fremennik_Trials"
   },
   {
     "type": "TRAIN",
@@ -680,22 +790,26 @@
   {
     "type": "QUEST",
     "displayName": "The Fremennik Isles (choose Defence for both rewards)",
-    "why": "Unlocks helm of Neitiznot; strong melee helm."
+    "why": "Unlocks helm of Neitiznot; strong melee helm.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Fremennik_Isles_(choose_Defence_for_both_rewards)"
   },
   {
     "type": "QUEST",
     "displayName": "Recipe for Disaster - Freeing Evil Dave",
-    "why": "Gloves progression; complete subquest for upgrades."
+    "why": "Gloves progression; complete subquest for upgrades.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster_-_Freeing_Evil_Dave"
   },
   {
     "type": "QUEST",
     "displayName": "Recipe for Disaster - Freeing Pirate Pete",
-    "why": "Gloves progression; complete subquest for upgrades."
+    "why": "Gloves progression; complete subquest for upgrades.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster_-_Freeing_Pirate_Pete"
   },
   {
     "type": "QUEST",
     "displayName": "Tai Bwo Wannai Trio",
-    "why": "Unlocks karambwan cooking; strong food option."
+    "why": "Unlocks karambwan cooking; strong food option.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tai_Bwo_Wannai_Trio"
   },
   {
     "type": "DIARY",
@@ -704,7 +818,8 @@
   {
     "type": "QUEST",
     "displayName": "Contact! (use combat lamps on Magic)",
-    "why": "Contact quest; XP rewards and route progression."
+    "why": "Contact quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Contact%21_(use_combat_lamps_on_Magic)"
   },
   {
     "type": "TRAIN",
@@ -715,7 +830,8 @@
   {
     "type": "QUEST",
     "displayName": "Temple of Ikov",
-    "why": "Temple quest; XP rewards and route progression."
+    "why": "Temple quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Temple_of_Ikov"
   },
   {
     "type": "TRAIN",
@@ -726,17 +842,20 @@
   {
     "type": "QUEST",
     "displayName": "The Eyes of Glouphrie",
-    "why": "Unlocks crystal saw; strong Construction boost."
+    "why": "Unlocks crystal saw; strong Construction boost.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Eyes_of_Glouphrie"
   },
   {
     "type": "QUEST",
     "displayName": "Temple of the Eye",
-    "why": "Temple quest; XP rewards and route progression."
+    "why": "Temple quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Temple_of_the_Eye"
   },
   {
     "type": "QUEST",
     "displayName": "One Small Favour (lamps on Slayer)",
-    "why": "One quest; XP rewards and route progression."
+    "why": "One quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/One_Small_Favour_(lamps_on_Slayer)"
   },
   {
     "type": "TRAIN",
@@ -747,17 +866,20 @@
   {
     "type": "QUEST",
     "displayName": "The Ascent of Arceuus",
-    "why": "Ascent quest; XP rewards and route progression."
+    "why": "Ascent quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Ascent_of_Arceuus"
   },
   {
     "type": "QUEST",
     "displayName": "Tale of the Righteous",
-    "why": "Tale quest; XP rewards and route progression."
+    "why": "Tale quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tale_of_the_Righteous"
   },
   {
     "type": "QUEST",
     "displayName": "The Forsaken Tower",
-    "why": "Forsaken quest; XP rewards and route progression."
+    "why": "Forsaken quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Forsaken_Tower"
   },
   {
     "type": "DIARY",
@@ -772,17 +894,20 @@
   {
     "type": "QUEST",
     "displayName": "Between a Rock...",
-    "why": "Between quest; XP rewards and route progression."
+    "why": "Between quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Between_a_Rock..."
   },
   {
     "type": "QUEST",
     "displayName": "The Slug Menace",
-    "why": "Unlocks proselyte armour; strong prayer gear."
+    "why": "Unlocks proselyte armour; strong prayer gear.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Slug_Menace"
   },
   {
     "type": "QUEST",
     "displayName": "Getting Ahead",
-    "why": "Getting quest; XP rewards and route progression."
+    "why": "Getting quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Getting_Ahead"
   },
   {
     "type": "UNLOCK",
@@ -797,7 +922,8 @@
   {
     "type": "QUEST",
     "displayName": "Cold War",
-    "why": "Cold quest; XP rewards and route progression."
+    "why": "Cold quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Cold_War"
   },
   {
     "type": "TRAIN",
@@ -808,7 +934,8 @@
   {
     "type": "QUEST",
     "displayName": "The Hand in the Sand",
-    "why": "Hand quest; XP rewards and route progression."
+    "why": "Hand quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Hand_in_the_Sand"
   },
   {
     "type": "TRAIN",
@@ -819,27 +946,32 @@
   {
     "type": "QUEST",
     "displayName": "Enakhra's Lament",
-    "why": "Enakhra's quest; XP rewards and route progression."
+    "why": "Enakhra's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Enakhra%27s_Lament"
   },
   {
     "type": "QUEST",
     "displayName": "Eadgar's Ruse",
-    "why": "Unlocks Trollheim teleport; fast troll access."
+    "why": "Unlocks Trollheim teleport; fast troll access.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Eadgar%27s_Ruse"
   },
   {
     "type": "QUEST",
     "displayName": "My Arm's Big Adventure",
-    "why": "My quest; XP rewards and route progression."
+    "why": "My quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/My_Arm%27s_Big_Adventure"
   },
   {
     "type": "QUEST",
     "displayName": "The Garden of Death",
-    "why": "Garden quest; XP rewards and route progression."
+    "why": "Garden quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Garden_of_Death"
   },
   {
     "type": "QUEST",
     "displayName": "Rag and Bone Man II",
-    "why": "Rag quest; XP rewards and route progression."
+    "why": "Rag quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Rag_and_Bone_Man_II"
   },
   {
     "type": "TRAIN",
@@ -868,17 +1000,20 @@
   {
     "type": "QUEST",
     "displayName": "Rum Deal",
-    "why": "Rum quest; XP rewards and route progression."
+    "why": "Rum quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Rum_Deal"
   },
   {
     "type": "QUEST",
     "displayName": "Cabin Fever",
-    "why": "Unlocks Mos Le'Harmless access; pirate content."
+    "why": "Unlocks Mos Le'Harmless access; pirate content.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Cabin_Fever"
   },
   {
     "type": "QUEST",
     "displayName": "Meat and Greet",
-    "why": "Meat quest; XP rewards and route progression."
+    "why": "Meat quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Meat_and_Greet"
   },
   {
     "type": "TRAIN",
@@ -889,7 +1024,8 @@
   {
     "type": "QUEST",
     "displayName": "Recipe for Disaster - Freeing the Lumbridge Guide",
-    "why": "Gloves progression; complete subquest for upgrades."
+    "why": "Gloves progression; complete subquest for upgrades.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster_-_Freeing_the_Lumbridge_Guide"
   },
   {
     "type": "TRAIN",
@@ -900,7 +1036,8 @@
   {
     "type": "QUEST",
     "displayName": "Recipe for Disaster - Freeing Skrach Uglogwee",
-    "why": "Gloves progression; complete subquest for upgrades."
+    "why": "Gloves progression; complete subquest for upgrades.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster_-_Freeing_Skrach_Uglogwee"
   },
   {
     "type": "TRAIN",
@@ -917,41 +1054,49 @@
   {
     "type": "QUEST",
     "displayName": "Heroes' Quest",
-    "why": "Unlocks dragon mace and battleaxe use."
+    "why": "Unlocks dragon mace and battleaxe use.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Heroes%27_Quest"
   },
   {
     "type": "QUEST",
     "displayName": "Throne of Miscellania",
-    "why": "Unlocks Managing Miscellania; passive resources. and progression."
+    "why": "Unlocks Managing Miscellania; passive resources. and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Throne_of_Miscellania"
   },
   {
     "type": "QUEST",
     "displayName": "Royal Trouble",
-    "why": "Expands Miscellania; more rewards and management."
+    "why": "Expands Miscellania; more rewards and management.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Royal_Trouble"
   },
   {
     "type": "QUEST",
     "displayName": "Haunted Mine",
-    "why": "Unlocks salve amulet; strong undead damage boost."
+    "why": "Unlocks salve amulet; strong undead damage boost.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Haunted_Mine"
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Lair of Tarn Razorlor (miniquest)"
+    "displayName": "Lair of Tarn Razorlor (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Lair_of_Tarn_Razorlor"
   },
   {
     "type": "QUEST",
     "displayName": "Monkey Madness I (take Daero XP)",
-    "why": "Ape Atoll access; dragon scimitar unlock milestone."
+    "why": "Ape Atoll access; dragon scimitar unlock milestone.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Monkey_Madness_I_(take_Daero_XP)"
   },
   {
     "type": "QUEST",
     "displayName": "Ethically Acquired Antiquities",
-    "why": "Ethically quest; XP rewards and route progression."
+    "why": "Ethically quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ethically_Acquired_Antiquities"
   },
   {
     "type": "QUEST",
     "displayName": "Twilight's Promise",
-    "why": "Unlocks Quetzal transport; faster Varlamore travel."
+    "why": "Unlocks Quetzal transport; faster Varlamore travel.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Twilight%27s_Promise"
   },
   {
     "type": "TRAIN",
@@ -968,17 +1113,20 @@
   {
     "type": "QUEST",
     "displayName": "Roving Elves",
-    "why": "Roving quest; XP rewards and route progression."
+    "why": "Roving quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Roving_Elves"
   },
   {
     "type": "QUEST",
     "displayName": "Mourning's End Part I",
-    "why": "Unlocks Lletya; progresses teleport crystal access."
+    "why": "Unlocks Lletya; progresses teleport crystal access.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mourning%27s_End_Part_I"
   },
   {
     "type": "QUEST",
     "displayName": "Mourning's End Part II",
-    "why": "Unlocks Lletya; progresses teleport crystal access."
+    "why": "Unlocks Lletya; progresses teleport crystal access.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mourning%27s_End_Part_II"
   },
   {
     "type": "TRAIN",
@@ -995,7 +1143,8 @@
   {
     "type": "QUEST",
     "displayName": "Desert Treasure I",
-    "why": "Unlocks Ancient Magicks; major combat spellbook."
+    "why": "Unlocks Ancient Magicks; major combat spellbook.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Desert_Treasure_I"
   },
   {
     "type": "TRAIN",
@@ -1006,7 +1155,8 @@
   {
     "type": "QUEST",
     "displayName": "Family Crest",
-    "why": "Family quest; XP rewards and route progression."
+    "why": "Family quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Family_Crest"
   },
   {
     "type": "TRAIN",
@@ -1017,7 +1167,8 @@
   {
     "type": "QUEST",
     "displayName": "What Lies Below",
-    "why": "What quest; XP rewards and route progression."
+    "why": "What quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/What_Lies_Below"
   },
   {
     "type": "TRAIN",
@@ -1028,12 +1179,14 @@
   {
     "type": "QUEST",
     "displayName": "Eagles' Peak",
-    "why": "Unlocks eagle transport; niche travel options."
+    "why": "Unlocks eagle transport; niche travel options.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Eagles%27_Peak"
   },
   {
     "type": "QUEST",
     "displayName": "A Tail of Two Cats (lamps on Herblore)",
-    "why": "Tail quest; XP rewards and route progression."
+    "why": "Tail quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/A_Tail_of_Two_Cats_(lamps_on_Herblore)"
   },
   {
     "type": "TRAIN",
@@ -1056,32 +1209,38 @@
   {
     "type": "QUEST",
     "displayName": "Legends' Quest (use rewards on Herblore)",
-    "why": "Legends' quest; XP rewards and route progression."
+    "why": "Legends' quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Legends%27_Quest_(use_rewards_on_Herblore)"
   },
   {
     "type": "QUEST",
     "displayName": "Land of the Goblins",
-    "why": "Land quest; XP rewards and route progression."
+    "why": "Land quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Land_of_the_Goblins"
   },
   {
     "type": "QUEST",
     "displayName": "Recipe for Disaster - Freeing Sir Amik Varze",
-    "why": "Gloves progression; complete subquest for upgrades."
+    "why": "Gloves progression; complete subquest for upgrades.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster_-_Freeing_Sir_Amik_Varze"
   },
   {
     "type": "QUEST",
     "displayName": "Olaf's Quest",
-    "why": "Olaf's quest; XP rewards and route progression."
+    "why": "Olaf's quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Olaf%27s_Quest"
   },
   {
     "type": "QUEST",
     "displayName": "A Kingdom Divided (lamp on Slayer)",
-    "why": "Unlocks more Arceuus spells; big utility boost."
+    "why": "Unlocks more Arceuus spells; big utility boost.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/A_Kingdom_Divided_(lamp_on_Slayer)"
   },
   {
     "type": "QUEST",
     "displayName": "A Taste of Hope (tome on Slayer)",
-    "why": "Unlocks Drakan's medallion; Morytania travel upgrade."
+    "why": "Unlocks Drakan's medallion; Morytania travel upgrade.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/A_Taste_of_Hope_(tome_on_Slayer)"
   },
   {
     "type": "TRAIN",
@@ -1092,7 +1251,8 @@
   {
     "type": "QUEST",
     "displayName": "At First Light",
-    "why": "At quest; XP rewards and route progression."
+    "why": "At quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/At_First_Light"
   },
   {
     "type": "TRAIN",
@@ -1122,11 +1282,13 @@
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Curse of the Empty Lord (miniquest)"
+    "displayName": "Curse of the Empty Lord (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Curse_of_the_Empty_Lord"
   },
   {
     "type": "MINIQUEST",
-    "displayName": "The General's Shadow (miniquest)"
+    "displayName": "The General's Shadow (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_General%27s_Shadow"
   },
   {
     "type": "UNLOCK",
@@ -1134,7 +1296,8 @@
   },
   {
     "type": "MINIQUEST",
-    "displayName": "His Faithful Servants (miniquest)"
+    "displayName": "His Faithful Servants (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/His_Faithful_Servants"
   },
   {
     "type": "TRAIN",
@@ -1145,17 +1308,20 @@
   {
     "type": "QUEST",
     "displayName": "The Great Brain Robbery (lamp on Slayer)",
-    "why": "Unlocks barrelchest anchor; niche melee weapon."
+    "why": "Unlocks barrelchest anchor; niche melee weapon.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Great_Brain_Robbery_(lamp_on_Slayer)"
   },
   {
     "type": "QUEST",
     "displayName": "Scrambled!",
-    "why": "Scrambled quest; XP rewards and route progression."
+    "why": "Scrambled quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Scrambled%21"
   },
   {
     "type": "QUEST",
     "displayName": "Fairytale II - Cure a Queen",
-    "why": "Start Fairy II; unlock fairy rings access."
+    "why": "Start Fairy II; unlock fairy rings access.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fairytale_II_-_Cure_a_Queen"
   },
   {
     "type": "TRAIN",
@@ -1166,12 +1332,14 @@
   {
     "type": "QUEST",
     "displayName": "Recipe for Disaster - Freeing King Awowogei",
-    "why": "Gloves progression; complete subquest for upgrades."
+    "why": "Gloves progression; complete subquest for upgrades.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster_-_Freeing_King_Awowogei"
   },
   {
     "type": "QUEST",
     "displayName": "Recipe for Disaster - Defeating the Culinaromancer",
-    "why": "Gloves progression; complete subquest for upgrades."
+    "why": "Gloves progression; complete subquest for upgrades.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster_-_Defeating_the_Culinaromancer"
   },
   {
     "type": "TRAIN",
@@ -1188,11 +1356,13 @@
   {
     "type": "QUEST",
     "displayName": "Perilous Moons",
-    "why": "Unlocks Cam Torum and Neypotzli access."
+    "why": "Unlocks Cam Torum and Neypotzli access.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Perilous_Moons"
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Start miniquest: In Search of Knowledge"
+    "displayName": "Start miniquest: In Search of Knowledge",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Start_miniquest%3A_In_Search_of_Knowledge"
   },
   {
     "type": "TRAIN",
@@ -1203,7 +1373,8 @@
   {
     "type": "QUEST",
     "displayName": "The Path of Glouphrie",
-    "why": "Unlocks warped sceptre drops access. and progression."
+    "why": "Unlocks warped sceptre drops access. and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Path_of_Glouphrie"
   },
   {
     "type": "TRAIN",
@@ -1214,7 +1385,8 @@
   {
     "type": "QUEST",
     "displayName": "The Heart of Darkness",
-    "why": "Unlocks Ruins of Tapoyauik access. and progression."
+    "why": "Unlocks Ruins of Tapoyauik access. and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Heart_of_Darkness"
   },
   {
     "type": "TRAIN",
@@ -1243,7 +1415,8 @@
   {
     "type": "QUEST",
     "displayName": "Lunar Diplomacy",
-    "why": "Unlocks Lunar spellbook; powerful utility spells."
+    "why": "Unlocks Lunar spellbook; powerful utility spells.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Lunar_Diplomacy"
   },
   {
     "type": "TRAIN",
@@ -1254,11 +1427,13 @@
   {
     "type": "QUEST",
     "displayName": "King's Ransom (lamp on Slayer)",
-    "why": "Unlocks Chivalry and Piety prayers; huge upgrade."
+    "why": "Unlocks Chivalry and Piety prayers; huge upgrade.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/King%27s_Ransom_(lamp_on_Slayer)"
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Knight Waves Training Grounds (miniquest)"
+    "displayName": "Knight Waves Training Grounds (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Knight_Waves_Training_Grounds"
   },
   {
     "type": "TRAIN",
@@ -1275,7 +1450,8 @@
   {
     "type": "QUEST",
     "displayName": "Swan Song",
-    "why": "Swan quest; XP rewards and route progression."
+    "why": "Swan quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Swan_Song"
   },
   {
     "type": "TRAIN",
@@ -1292,12 +1468,14 @@
   {
     "type": "QUEST",
     "displayName": "Below Ice Mountain",
-    "why": "Unlocks Camdozaal ruins and Imcando hammer."
+    "why": "Unlocks Camdozaal ruins and Imcando hammer.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Below_Ice_Mountain"
   },
   {
     "type": "QUEST",
     "displayName": "Defender of Varrock (lamp on Slayer)",
-    "why": "Defender quest; XP rewards and route progression."
+    "why": "Defender quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Defender_of_Varrock_(lamp_on_Slayer)"
   },
   {
     "type": "TRAIN",
@@ -1314,7 +1492,8 @@
   {
     "type": "QUEST",
     "displayName": "Devious Minds",
-    "why": "Devious quest; XP rewards and route progression."
+    "why": "Devious quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Devious_Minds"
   },
   {
     "type": "TRAIN",
@@ -1331,7 +1510,8 @@
   {
     "type": "QUEST",
     "displayName": "Grim Tales",
-    "why": "Grim quest; XP rewards and route progression."
+    "why": "Grim quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Grim_Tales"
   },
   {
     "type": "NOTE",
@@ -1340,7 +1520,8 @@
   {
     "type": "QUEST",
     "displayName": "Dream Mentor (Dreamy lamp on Magic)",
-    "why": "Unlocks advanced Lunar spells; major utility upgrade."
+    "why": "Unlocks advanced Lunar spells; major utility upgrade.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dream_Mentor_(Dreamy_lamp_on_Magic)"
   },
   {
     "type": "TRAIN",
@@ -1371,7 +1552,8 @@
   {
     "type": "QUEST",
     "displayName": "The Fremennik Exiles",
-    "why": "Unlocks Neitiznot faceguard; BIS upgrade. and progression."
+    "why": "Unlocks Neitiznot faceguard; BIS upgrade. and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Fremennik_Exiles"
   },
   {
     "type": "TRAIN",
@@ -1382,7 +1564,8 @@
   {
     "type": "QUEST",
     "displayName": "Sins of the Father (tome on Slayer)",
-    "why": "Unlocks Darkmeyer and blisterwood flail. and progression."
+    "why": "Unlocks Darkmeyer and blisterwood flail. and progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sins_of_the_Father_(tome_on_Slayer)"
   },
   {
     "type": "TRAIN",
@@ -1396,11 +1579,13 @@
   },
   {
     "type": "MINIQUEST",
-    "displayName": "In Search of Knowledge (miniquest, lamp on Slayer)"
+    "displayName": "In Search of Knowledge (miniquest, lamp on Slayer)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/In_Search_of_Knowledge_(miniquest%2C_lamp_on_Slayer)"
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Hopespear's Will (miniquest)"
+    "displayName": "Hopespear's Will (miniquest)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Hopespear%27s_Will"
   },
   {
     "type": "TRAIN",
@@ -1411,7 +1596,8 @@
   {
     "type": "QUEST",
     "displayName": "Beneath Cursed Sands",
-    "why": "Unlocks ToA access and Keris partisan."
+    "why": "Unlocks ToA access and Keris partisan.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Beneath_Cursed_Sands"
   },
   {
     "type": "TRAIN",
@@ -1422,7 +1608,8 @@
   {
     "type": "QUEST",
     "displayName": "Shadows of Custodia",
-    "why": "Unlocks Stalker Den access; later progression."
+    "why": "Unlocks Stalker Den access; later progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Shadows_of_Custodia"
   },
   {
     "type": "NOTE",
@@ -1437,7 +1624,8 @@
   {
     "type": "QUEST",
     "displayName": "Troubled Tortugans",
-    "why": "Unlocks The Great Conch access; later content."
+    "why": "Unlocks The Great Conch access; later content.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Troubled_Tortugans"
   },
   {
     "type": "TRAIN",
@@ -1466,16 +1654,19 @@
   {
     "type": "QUEST",
     "displayName": "Monkey Madness II (choose Magic during training)",
-    "why": "Ape Atoll access; dragon scimitar unlock milestone."
+    "why": "Ape Atoll access; dragon scimitar unlock milestone.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Monkey_Madness_II_(choose_Magic_during_training)"
   },
   {
     "type": "MINIQUEST",
-    "displayName": "Into the Tombs (miniquest, lamp on Magic)"
+    "displayName": "Into the Tombs (miniquest, lamp on Magic)",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Into_the_Tombs_(miniquest%2C_lamp_on_Magic)"
   },
   {
     "type": "QUEST",
     "displayName": "A Night at the Theatre (lamps on Magic)",
-    "why": "Night quest; XP rewards and route progression."
+    "why": "Night quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/A_Night_at_the_Theatre_(lamps_on_Magic)"
   },
   {
     "type": "TRAIN",
@@ -1498,12 +1689,14 @@
   {
     "type": "QUEST",
     "displayName": "Dragon Slayer II (take Ellen XP batches, pick Attack per paste)",
-    "why": "Gear milestone; unlocks rune and d'hide bodies."
+    "why": "Gear milestone; unlocks rune and d'hide bodies.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dragon_Slayer_II_(take_Ellen_XP_batches%2C_pick_Attack_per_paste)"
   },
   {
     "type": "QUEST",
     "displayName": "The Curse of Arrav",
-    "why": "Curse quest; XP rewards and route progression."
+    "why": "Curse quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Curse_of_Arrav"
   },
   {
     "type": "TRAIN",
@@ -1514,7 +1707,8 @@
   {
     "type": "QUEST",
     "displayName": "Making Friends with My Arm",
-    "why": "Unlocks Weiss and basalt teleports travel."
+    "why": "Unlocks Weiss and basalt teleports travel.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Making_Friends_with_My_Arm"
   },
   {
     "type": "TRAIN",
@@ -1525,7 +1719,8 @@
   {
     "type": "QUEST",
     "displayName": "Secrets of the North",
-    "why": "Secrets quest; XP rewards and route progression."
+    "why": "Secrets quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Secrets_of_the_North"
   },
   {
     "type": "TRAIN",
@@ -1536,7 +1731,8 @@
   {
     "type": "QUEST",
     "displayName": "The Final Dawn",
-    "why": "Unlocks Tonali crypt access and Arkan blade."
+    "why": "Unlocks Tonali crypt access and Arkan blade.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Final_Dawn"
   },
   {
     "type": "TRAIN",
@@ -1571,7 +1767,8 @@
   {
     "type": "QUEST",
     "displayName": "While Guthix Sleeps",
-    "why": "While quest; XP rewards and route progression."
+    "why": "While quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/While_Guthix_Sleeps"
   },
   {
     "type": "TRAIN",
@@ -1594,7 +1791,8 @@
   {
     "type": "QUEST",
     "displayName": "Desert Treasure II - The Fallen Empire (use lamps on Prayer per paste)",
-    "why": "Unlocks Ancient Magicks; major combat spellbook."
+    "why": "Unlocks Ancient Magicks; major combat spellbook.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Desert_Treasure_II_-_The_Fallen_Empire_(use_lamps_on_Prayer_per_paste)"
   },
   {
     "type": "TRAIN",
@@ -1629,17 +1827,20 @@
   {
     "type": "QUEST",
     "displayName": "Song of the Elves",
-    "why": "Unlocks Prifddinas access; huge endgame hub."
+    "why": "Unlocks Prifddinas access; huge endgame hub.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Song_of_the_Elves"
   },
   {
     "type": "QUEST",
     "displayName": "Clock Tower",
-    "why": "Clock quest; XP rewards and route progression."
+    "why": "Clock quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Clock_Tower"
   },
   {
     "type": "QUEST",
     "displayName": "The Corsair Curse",
-    "why": "Corsair quest; XP rewards and route progression."
+    "why": "Corsair quest; XP rewards and route progression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Corsair_Curse"
   },
   {
     "type": "NOTE",

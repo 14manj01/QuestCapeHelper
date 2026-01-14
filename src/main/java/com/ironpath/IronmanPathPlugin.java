@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.events.GameStateChanged;
+import net.runelite.api.events.GameTick;
 import net.runelite.api.events.VarbitChanged;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
@@ -25,7 +26,7 @@ import net.runelite.client.util.ImageUtil;
 
 @Slf4j
 @PluginDescriptor(
-        name = "Ironman Path",
+        name = "Optimal Quest Order",
         description = "Quest-first ironman progression panel (quest cape route, readiness, search).",
         tags = {"ironman", "quest", "route", "efficiency"}
 )
@@ -46,9 +47,8 @@ public class IronmanPathPlugin extends Plugin
     private IronmanPathPanel panel;
     private NavigationButton navButton;
 
-    // Debounce refresh spam (varbits can fire frequently).
-    private long lastRefreshMs = 0L;
-    private static final long REFRESH_DEBOUNCE_MS = 400L;
+    // Delay the first refresh after login so skills/quests/varbits settle and we avoid UI thrash.
+    private int refreshInTicks = 0;
 
     @Provides
     IronmanPathConfig provideConfig(ConfigManager configManager)
@@ -104,32 +104,56 @@ public class IronmanPathPlugin extends Plugin
 
         if (event.getGameState() == GameState.LOGGED_IN)
         {
-            panel.refresh();
+            // Wait a couple ticks so quest state/skills/varbits are populated.
+            refreshInTicks = 2;
+            panel.showLoading();
+            return;
+        }
+
+        if (event.getGameState() == GameState.LOGIN_SCREEN || event.getGameState() == GameState.HOPPING)
+        {
+            refreshInTicks = 0;
+        }
+    }
+
+    @Subscribe
+    public void onGameTick(GameTick tick)
+    {
+        if (panel == null)
+        {
+            return;
+        }
+
+        if (refreshInTicks > 0)
+        {
+            refreshInTicks--;
+            if (refreshInTicks == 0)
+            {
+                panel.requestRefresh();
+            }
         }
     }
 
     @Subscribe
     public void onVarbitChanged(VarbitChanged event)
     {
-        // Quest progress updates are reflected through varbits/varps.
-        // Refresh with a small debounce to avoid spamming UI rebuilds.
         if (panel == null)
         {
             return;
         }
 
-        final long now = System.currentTimeMillis();
-        if (now - lastRefreshMs < REFRESH_DEBOUNCE_MS)
-        {
-            return;
-        }
-        lastRefreshMs = now;
-        panel.refresh();
+        // Coalesce frequent varbit/varp changes into a single UI rebuild.
+        panel.requestRefresh();
     }
 
     @Subscribe
     public void onConfigChanged(ConfigChanged event)
     {
-        panel.refresh();
+        if (panel == null)
+        {
+            return;
+        }
+
+        panel.requestRefresh();
     }
 }

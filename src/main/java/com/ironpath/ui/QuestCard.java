@@ -9,11 +9,14 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import net.runelite.api.QuestState;
 import net.runelite.client.ui.ColorScheme;
+import net.runelite.client.ui.FontManager;
+import net.runelite.client.util.LinkBrowser;
 
 public final class QuestCard
 {
@@ -46,7 +49,7 @@ public final class QuestCard
             c.weightx = 0;
             c.fill = GridBagConstraints.NONE;
             c.anchor = GridBagConstraints.NORTHEAST;
-            card.add(pillForState(state), c);
+            card.add(wikiPill(recommended), c);
         }
 
         // Title + reason
@@ -95,7 +98,12 @@ public final class QuestCard
         return card;
     }
 
-    public static JPanel compact(QuestEntry entry, QuestState state)
+public static JPanel compact(QuestEntry entry, QuestState state)
+    {
+        return compact(entry, state, -1, -1);
+    }
+
+    public static JPanel compact(QuestEntry entry, QuestState state, int spineIndex, int spineTotal)
     {
         JPanel card = baseCard();
         card.setLayout(new GridBagLayout());
@@ -112,21 +120,59 @@ public final class QuestCard
         JTextArea title = wrapTextFlush(entry.getQuestName(), 12f, true);
         card.add(title, c);
 
-        // Pill (right, fixed)
+        // Right header: progress + pill
         c.gridx = 1;
         c.gridy = 0;
         c.weightx = 0;
         c.fill = GridBagConstraints.NONE;
         c.anchor = GridBagConstraints.NORTHEAST;
         c.insets = new Insets(0, 0, 0, 0);
-        card.add(pillForState(state), c);
 
-        // Reason (full width under title)
+        JPanel right = new JPanel();
+        right.setOpaque(false);
+        right.setLayout(new javax.swing.BoxLayout(right, javax.swing.BoxLayout.Y_AXIS));
+
+        JLabel progress = new JLabel(formatProgressCompact(spineIndex, spineTotal));
+        progress.setFont(progress.getFont().deriveFont(Font.PLAIN, 10f));
+        progress.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+        progress.setAlignmentX(Component.RIGHT_ALIGNMENT);
+
+        JPanel pill = wikiPill(entry);
+        pill.setAlignmentX(Component.RIGHT_ALIGNMENT);
+
+        if (progress.getText() != null && !progress.getText().isBlank())
+        {
+            right.add(progress);
+            right.add(javax.swing.Box.createVerticalStrut(2));
+        }
+        right.add(pill);
+
+        card.add(right, c);
+
+        // Step line under title (full width)
+        String stepLine = formatProgressLong(spineIndex, spineTotal);
+        if (stepLine != null && !stepLine.isBlank())
+        {
+            c.gridx = 0;
+            c.gridy = 1;
+            c.gridwidth = 2;
+            c.weightx = 1;
+            c.fill = GridBagConstraints.HORIZONTAL;
+            c.anchor = GridBagConstraints.NORTHWEST;
+            c.insets = new Insets(2, 0, 0, 0);
+
+            JLabel step = new JLabel(stepLine);
+            step.setFont(step.getFont().deriveFont(Font.PLAIN, 10.5f));
+            step.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+            card.add(step, c);
+        }
+
+        // Reason (full width under step line)
         String why = entry.getShortWhy();
         if (why != null && !why.isBlank())
         {
             c.gridx = 0;
-            c.gridy = 1;
+            c.gridy = 2;
             c.gridwidth = 2;
             c.weightx = 1;
             c.fill = GridBagConstraints.HORIZONTAL;
@@ -138,6 +184,24 @@ public final class QuestCard
 
         forceFillWidth(card);
         return card;
+    }
+
+    private static String formatProgressCompact(int spineIndex, int spineTotal)
+    {
+        if (spineIndex < 0 || spineTotal <= 0)
+        {
+            return "";
+        }
+        return (spineIndex + 1) + " / " + spineTotal;
+    }
+
+    private static String formatProgressLong(int spineIndex, int spineTotal)
+    {
+        if (spineIndex < 0 || spineTotal <= 0)
+        {
+            return "";
+        }
+        return "Step " + (spineIndex + 1) + " of " + spineTotal;
     }
 
     private static JPanel baseCard()
@@ -153,11 +217,37 @@ public final class QuestCard
         return p;
     }
 
+
+    private static String resolveWikiUrl(QuestEntry entry)
+    {
+        if (entry != null)
+        {
+            String u = entry.getWikiUrl();
+            if (u != null && !u.trim().isEmpty())
+            {
+                return u.trim();
+            }
+
+            String name = entry.getQuestName();
+            if (name != null && !name.trim().isEmpty())
+            {
+                final String slug = name.trim().replace(' ', '_');
+                try
+                {
+                    return "https://oldschool.runescape.wiki/w/" + java.net.URLEncoder.encode(slug, java.nio.charset.StandardCharsets.UTF_8)
+                            .replace("+", "%20");
+                }
+                catch (Exception ignored)
+                {
+                    // fall through
+                }
+            }
+        }
+        return "https://oldschool.runescape.wiki/";
+    }
     private static JTextArea wrapTextFlush(String text, float fontSize, boolean bold)
     {
         JTextArea area = new JTextArea(text == null ? "" : text);
-        // Keep columns small so preferred width doesn't exceed the sidebar.
-        area.setColumns(1);
         area.setRows(1);
         area.setOpaque(false);
         area.setEditable(false);
@@ -171,53 +261,37 @@ public final class QuestCard
         area.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
 
         area.setMargin(new Insets(0, 0, 0, 0));
-        // Small right gutter so wrapped lines don't touch the card edge and don't run under the scrollbar.
         area.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 8));
+        // Keep preferred width small so the card never exceeds the sidebar.
+        area.setColumns(1);
 
-        // Do not inflate preferred width (prevents right-edge clipping when horizontal
-        // scrolling is disabled). Wrapping is handled by the viewport width.
-
-        // Prevent width inflation but allow height growth
-        area.setAlignmentX(Component.LEFT_ALIGNMENT);
-        area.setMinimumSize(new Dimension(0, 0));
-        area.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
-	return area;
+        return area;
     }
 
-    private static JPanel pillForState(QuestState state)
+    private static JPanel wikiPill(QuestEntry entry)
     {
-        String text;
-        switch (state)
-        {
-            case FINISHED:
-                text = "Done";
-                break;
-            case IN_PROGRESS:
-                text = "In progress";
-                break;
-            case NOT_STARTED:
-            default:
-                text = "Ready";
-                break;
-        }
+        final String url = resolveWikiUrl(entry);
 
-        JLabel label = new JLabel(text);
-        label.setFont(label.getFont().deriveFont(Font.BOLD, 11f));
-        label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        JButton b = new JButton("Quest Guide");
+        b.setFocusable(false);
+        b.setFont(FontManager.getRunescapeSmallFont());
+        b.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        b.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        b.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(ColorScheme.MEDIUM_GRAY_COLOR, 1),
+                BorderFactory.createEmptyBorder(2, 6, 2, 6)
+        ));
+        b.addActionListener(e -> LinkBrowser.browse(url));
 
         JPanel wrap = new JPanel(new FlowLayout(FlowLayout.RIGHT, 0, 0));
-        wrap.setOpaque(true);
-        wrap.setBackground(ColorScheme.DARK_GRAY_COLOR);
-        wrap.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(ColorScheme.DARK_GRAY_COLOR, 1, true),
-                BorderFactory.createEmptyBorder(3, 8, 3, 8)
-        ));
-        wrap.add(label);
+        wrap.setOpaque(false);
+        wrap.add(b);
 
         Dimension pref = wrap.getPreferredSize();
         wrap.setMaximumSize(new Dimension(pref.width, pref.height));
         return wrap;
     }
+
 
     private static void forceFillWidth(JPanel panel)
     {

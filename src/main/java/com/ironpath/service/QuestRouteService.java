@@ -148,11 +148,12 @@ private static final String ROUTE_RESOURCE = "/com/ironpath/wiki_route.json";
                             .toLevel(r.toLevel)
                             .displayName(r.displayName != null ? r.displayName : ("Train " + s.getName()))
                             .why(r.why)
+                            .wikiUrl(r.wikiUrl)
                             .build());
                 }
                 else
                 {
-                    out.add(b.displayName(r.displayName).why(r.why).build());
+                    out.add(b.displayName(r.displayName).why(r.why).wikiUrl(r.wikiUrl).build());
                 }
             }
         }
@@ -275,6 +276,7 @@ return out;
         private String quest;
         private String displayName;
         private String why;
+        private String wikiUrl;
 
         private String skill;
         private Integer toLevel;
