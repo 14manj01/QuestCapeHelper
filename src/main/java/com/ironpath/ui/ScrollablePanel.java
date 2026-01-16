@@ -16,7 +16,21 @@ public class ScrollablePanel extends JPanel implements Scrollable
     @Override
     public Dimension getPreferredScrollableViewportSize()
     {
-        return getPreferredSize();
+        // RuneLite's sidebar layout can honor a scrollpane's preferred size. During a refresh
+        // (e.g., after removeAll() and before all cards are re-added), our preferred height can
+        // momentarily shrink to a single card, causing the entire list area to collapse.
+        //
+        // Provide a stable minimum viewport height so the scroll area stays full-sized.
+        Dimension pref = getPreferredSize();
+
+        int minH = 400;
+        if (getParent() != null)
+        {
+            // If we're already inside a viewport, prefer its current height.
+            minH = Math.max(minH, getParent().getHeight());
+        }
+
+        return new Dimension(pref.width, Math.max(pref.height, minH));
     }
 
     @Override

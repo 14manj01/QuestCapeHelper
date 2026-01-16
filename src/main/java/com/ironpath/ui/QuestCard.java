@@ -14,6 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import net.runelite.api.QuestState;
+import net.runelite.api.SpriteID;
+import net.runelite.client.game.SpriteManager;
+import net.runelite.client.callback.ClientThread;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.util.LinkBrowser;
@@ -21,6 +24,10 @@ import net.runelite.client.util.LinkBrowser;
 public final class QuestCard
 {
     private static final int PAD = 10;
+    private static final int ICON_SIZE = 16;
+
+    // Icons are sourced from OSRS cache sprites via SpriteManager.
+    // We intentionally do not use bundled fallbacks to avoid icon swapping during refreshes.
 
     private QuestCard() {}
 
@@ -98,74 +105,59 @@ public final class QuestCard
         return card;
     }
 
-public static JPanel compact(QuestEntry entry, QuestState state)
+    public static JPanel compact(QuestEntry entry, QuestState state)
     {
-        return compact(entry, state, -1, -1);
+        return compact(null, entry, state, -1, -1);
     }
 
     public static JPanel compact(QuestEntry entry, QuestState state, int spineIndex, int spineTotal)
+    {
+        return compact(null, entry, state, spineIndex, spineTotal);
+    }
+
+    public static JPanel compact(SpriteManager spriteManager, QuestEntry entry, QuestState state, int spineIndex, int spineTotal)
+    {
+        return compact(spriteManager, null, entry, state, spineIndex, spineTotal);
+    }
+
+    public static JPanel compact(SpriteManager spriteManager, ClientThread clientThread, QuestEntry entry, QuestState state, int spineIndex, int spineTotal)
     {
         JPanel card = baseCard();
         card.setLayout(new GridBagLayout());
 
         GridBagConstraints c = new GridBagConstraints();
+        // Row 1: icon + title (tight)
         c.gridx = 0;
         c.gridy = 0;
+        c.gridwidth = 2;
         c.weightx = 1;
         c.fill = GridBagConstraints.HORIZONTAL;
         c.anchor = GridBagConstraints.NORTHWEST;
-        c.insets = new Insets(0, 0, 0, 8);
+        c.insets = new Insets(0, 0, 0, 0);
+        // RuneLite SpriteID doesn't expose a consistent "QUESTS_TAB" constant across versions.
+        // Use the quests page icon sprite, which is stable and matches the in-game quests UI.
+        card.add(iconTitleRow(spriteManager, clientThread, SpriteID.QUESTS_PAGE_ICON_BLUE_QUESTS, entry.getQuestName()), c);
 
-        // WRAPPING TITLE (left, takes remaining width)
-        JTextArea title = wrapTextFlush(entry.getQuestName(), 12f, true);
-        card.add(title, c);
+        // Row 2: "Step X of Y" (left) + Quest Guide (right)
+        String stepLine = formatProgressLong(spineIndex, spineTotal);
 
-        // Right header: progress + pill
+        c.gridwidth = 1;
+        c.gridy = 1;
+        c.insets = new Insets(2, 0, 0, 0);
+
+        c.gridx = 0;
+        c.weightx = 1;
+        c.fill = GridBagConstraints.HORIZONTAL;
+        JLabel step = new JLabel(stepLine);
+        step.setFont(step.getFont().deriveFont(Font.PLAIN, 10.5f));
+        step.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+        card.add(step, c);
+
         c.gridx = 1;
-        c.gridy = 0;
         c.weightx = 0;
         c.fill = GridBagConstraints.NONE;
         c.anchor = GridBagConstraints.NORTHEAST;
-        c.insets = new Insets(0, 0, 0, 0);
-
-        JPanel right = new JPanel();
-        right.setOpaque(false);
-        right.setLayout(new javax.swing.BoxLayout(right, javax.swing.BoxLayout.Y_AXIS));
-
-        JLabel progress = new JLabel(formatProgressCompact(spineIndex, spineTotal));
-        progress.setFont(progress.getFont().deriveFont(Font.PLAIN, 10f));
-        progress.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
-        progress.setAlignmentX(Component.RIGHT_ALIGNMENT);
-
-        JPanel pill = wikiPill(entry);
-        pill.setAlignmentX(Component.RIGHT_ALIGNMENT);
-
-        if (progress.getText() != null && !progress.getText().isBlank())
-        {
-            right.add(progress);
-            right.add(javax.swing.Box.createVerticalStrut(2));
-        }
-        right.add(pill);
-
-        card.add(right, c);
-
-        // Step line under title (full width)
-        String stepLine = formatProgressLong(spineIndex, spineTotal);
-        if (stepLine != null && !stepLine.isBlank())
-        {
-            c.gridx = 0;
-            c.gridy = 1;
-            c.gridwidth = 2;
-            c.weightx = 1;
-            c.fill = GridBagConstraints.HORIZONTAL;
-            c.anchor = GridBagConstraints.NORTHWEST;
-            c.insets = new Insets(2, 0, 0, 0);
-
-            JLabel step = new JLabel(stepLine);
-            step.setFont(step.getFont().deriveFont(Font.PLAIN, 10.5f));
-            step.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
-            card.add(step, c);
-        }
+        card.add(wikiPill(entry), c);
 
         // Reason (full width under step line)
         String why = entry.getShortWhy();
@@ -292,6 +284,46 @@ public static JPanel compact(QuestEntry entry, QuestState state)
         return wrap;
     }
 
+    private static JPanel iconTitleRow(SpriteManager spriteManager, ClientThread clientThread, int spriteId, String titleText)
+    {
+        JPanel row = new JPanel(new GridBagLayout());
+        row.setOpaque(false);
+
+        GridBagConstraints r = new GridBagConstraints();
+        r.gridy = 0;
+        r.anchor = GridBagConstraints.NORTHWEST;
+        r.insets = new Insets(0, 0, 0, 6);
+
+        // Icon (fixed slot, prevents text jitter)
+        JLabel iconLabel = new JLabel();
+        iconLabel.setOpaque(false);
+        // Attach the OSRS sprite icon (cached) without fallbacks to avoid swapping during refreshes.
+        SpriteIconCache.attach(iconLabel, spriteManager, clientThread, spriteId, ICON_SIZE);
+        iconLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        // OSRS cache sprites often include a small amount of transparent padding.
+        // Nudge the icon up slightly so it aligns better with the title text.
+        iconLabel.setBorder(BorderFactory.createEmptyBorder(-2, 0, 0, 0));
+        iconLabel.setPreferredSize(new Dimension(ICON_SIZE, ICON_SIZE));
+        iconLabel.setMinimumSize(new Dimension(ICON_SIZE, ICON_SIZE));
+        iconLabel.setMaximumSize(new Dimension(ICON_SIZE, ICON_SIZE));
+        r.gridx = 0;
+        r.weightx = 0;
+        row.add(iconLabel, r);
+
+        // Title (wrapping)
+        r.gridx = 1;
+        r.weightx = 1;
+        r.fill = GridBagConstraints.HORIZONTAL;
+        r.insets = new Insets(0, 0, 0, 0);
+        JTextArea title = wrapTextFlush(titleText == null ? "" : titleText, 12f, true);
+        // Title row is tight, so no extra right padding.
+        title.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        row.add(title, r);
+
+        return row;
+    }
+
+    
 
     private static void forceFillWidth(JPanel panel)
     {

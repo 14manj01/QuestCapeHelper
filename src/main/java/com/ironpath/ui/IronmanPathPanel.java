@@ -19,6 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import net.runelite.client.callback.ClientThread;
+import net.runelite.client.game.SpriteManager;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.PluginPanel;
@@ -31,6 +32,7 @@ public class IronmanPathPanel extends PluginPanel
     private final QuestRouteService routeService;
     private final ProgressionPlanService planService;
     private final ClientThread clientThread;
+    private final SpriteManager spriteManager;
 
     private final JButton refreshButton = new JButton("Refresh");
 
@@ -41,13 +43,15 @@ public class IronmanPathPanel extends PluginPanel
 
     public IronmanPathPanel(QuestRouteService routeService,
                             ProgressionPlanService planService,
-                            ClientThread clientThread)
+                            ClientThread clientThread,
+                            SpriteManager spriteManager)
     {
         super();
         setLayout(new BorderLayout());
         this.routeService = routeService;
         this.planService = planService;
         this.clientThread = clientThread;
+        this.spriteManager = spriteManager;
 
         setBackground(ColorScheme.DARK_GRAY_COLOR);
 
@@ -196,7 +200,7 @@ public class IronmanPathPanel extends PluginPanel
                 continue;
             }
 
-            JPanel card = PlanStepCard.compact(v);
+            JPanel card = PlanStepCard.compact(spriteManager, clientThread, v);
             forceFillWidth(card);
             body.add(card);
             body.add(Box.createVerticalStrut(6));

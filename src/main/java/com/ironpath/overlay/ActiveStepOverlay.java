@@ -3,27 +3,34 @@ package com.ironpath.overlay;
 import com.ironpath.IronmanPathConfig;
 import com.ironpath.model.InfoPlanStep;
 import com.ironpath.model.PlanStep;
-import com.ironpath.model.SpineStepView;
 import com.ironpath.model.PlanStepType;
 import com.ironpath.model.QuestPlanStep;
+import com.ironpath.model.SpineStepView;
 import com.ironpath.model.TrainPlanStep;
 import com.ironpath.service.ProgressionPlanService;
 import com.ironpath.service.QuestRouteService;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import javax.inject.Inject;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
-import net.runelite.api.QuestState;
+import net.runelite.api.SpriteID;
+import net.runelite.client.callback.ClientThread;
+import net.runelite.client.game.SpriteManager;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPanel;
 import net.runelite.client.ui.overlay.OverlayPosition;
-import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
-import net.runelite.client.ui.overlay.components.TitleComponent;
-
-import java.util.ArrayList;
 
 /**
  * Displays the current active step (first step in the Next N list) in the game view.
@@ -33,25 +40,41 @@ import java.util.ArrayList;
  */
 public class ActiveStepOverlay extends OverlayPanel
 {
-    private static final int MAX_WIDTH = 210;
-    private static final int WRAP_CHARS = 36;
+    private static final int MAX_WIDTH = 240;
+    private static final int WRAP_CHARS = 44;
+
+    private static final int PAD = 8;
+    private static final int ICON_SIZE = 16;
+    private static final int ICON_GAP = 6;
+    private static final int LINE_GAP = 3;
+
+    // Cache OSRS sprites for overlay rendering to avoid flicker on refresh.
+    private static final Map<Integer, BufferedImage> SPRITE_CACHE = new ConcurrentHashMap<>();
+    private static final Set<Integer> SPRITE_IN_FLIGHT = ConcurrentHashMap.newKeySet();
 
     private final Client client;
     private final IronmanPathConfig config;
     private final QuestRouteService routeService;
     private final ProgressionPlanService planService;
 
+    private final ClientThread clientThread;
+    private final SpriteManager spriteManager;
+
     @Inject
     public ActiveStepOverlay(
             Client client,
             IronmanPathConfig config,
             QuestRouteService routeService,
-            ProgressionPlanService planService)
+            ProgressionPlanService planService,
+            ClientThread clientThread,
+            SpriteManager spriteManager)
     {
         this.client = client;
         this.config = config;
         this.routeService = routeService;
         this.planService = planService;
+        this.clientThread = clientThread;
+        this.spriteManager = spriteManager;
 
         setPosition(OverlayPosition.TOP_RIGHT);
         setLayer(OverlayLayer.ABOVE_WIDGETS);
@@ -62,7 +85,7 @@ public class ActiveStepOverlay extends OverlayPanel
     }
 
     @Override
-    public Dimension render(java.awt.Graphics2D graphics)
+    public Dimension render(Graphics2D graphics)
     {
         if (!config.showActiveStepOverlay())
         {
@@ -83,100 +106,128 @@ public class ActiveStepOverlay extends OverlayPanel
         final SpineStepView view = next.get(0);
         final PlanStep step = view.getStep();
         final PanelComponent pc = getPanelComponent();
-        pc.getChildren().clear();
 
-        pc.getChildren().add(TitleComponent.builder().text("Active step").build());
+        // Compact overlay:
+        // Row 1: [icon] Title
+        // Row 2: "Step X of Y" (left)
+        // Body: why text wrapped
+        // NOTE: "Quest Guide" text removed.
+        pc.getChildren().clear();
 
         final int stepNum = view.getSpineIndex() + 1;
         final int total = view.getSpineTotal();
-        pc.getChildren().add(LineComponent.builder().left("").right(stepNum + " / " + total).build());
-// Quest
+
+        String title;
+        String why = null;
+        boolean showQuestIcon = false;
+
         if (step instanceof QuestPlanStep)
         {
             QuestPlanStep q = (QuestPlanStep) step;
-            String title = q.getEntry().getQuestName();
-            String why = q.getEntry().getShortWhy();
-            String pill = pillText(q.getState());
-
-            pc.getChildren().add(LineComponent.builder()
-                    .left(title)
-                    .right(pill)
-                    .build());
-
-            if (why != null && !why.isBlank())
-            {
-                addWrapped(pc, why);
-            }
-
-            return super.render(graphics);
+            title = q.getEntry().getQuestName();
+            why = q.getEntry().getShortWhy();
+            showQuestIcon = true;
         }
-
-        // Train
-        if (step instanceof TrainPlanStep)
+        else if (step instanceof TrainPlanStep)
         {
             TrainPlanStep t = (TrainPlanStep) step;
-            String title = "Train " + t.getSkill().getName() + " to " + t.getToLevel();
-            pc.getChildren().add(LineComponent.builder().left(title).build());
-
-            String why = t.getReason();
-            if (why != null && !why.isBlank())
-            {
-                addWrapped(pc, why);
-            }
-
-            return super.render(graphics);
+            title = "Train " + t.getSkill().getName() + " to " + t.getToLevel();
+            why = t.getReason();
         }
-
-        // Info/Note/Diary/etc
-        if (step instanceof InfoPlanStep)
+        else if (step instanceof InfoPlanStep)
         {
             InfoPlanStep s = (InfoPlanStep) step;
             String label = labelFor(s.getType());
-            String title = s.getTitle() == null ? "" : s.getTitle();
-            String header = label.isEmpty() ? title : (label + ": " + title);
-            pc.getChildren().add(LineComponent.builder().left(header).build());
+            String t = s.getTitle() == null ? "" : s.getTitle();
+            title = label.isEmpty() ? t : (label + ": " + t);
+            why = s.getDetail();
+        }
+        else
+        {
+            title = step.getType().name();
+        }
 
-            String why = s.getDetail();
-            if (why != null && !why.isBlank())
+        // Render hints
+        graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        final Font base = graphics.getFont();
+        final Font titleFont = base.deriveFont(Font.BOLD, base.getSize2D());
+        final Font bodyFont = base.deriveFont(Font.PLAIN, base.getSize2D());
+
+        final int width = MAX_WIDTH;
+        int x = PAD;
+        int y = PAD;
+
+        // Pre-wrap body
+        final List<String> wrapped = (why == null || why.isBlank()) ? new ArrayList<>() : wrap(why);
+
+        // Measure
+        graphics.setFont(titleFont);
+        FontMetrics titleFm = graphics.getFontMetrics();
+        int titleLineH = titleFm.getHeight();
+
+        graphics.setFont(bodyFont);
+        FontMetrics bodyFm = graphics.getFontMetrics();
+        int bodyLineH = bodyFm.getHeight();
+
+        // Layout heights
+        int headerH = titleLineH + LINE_GAP + bodyLineH;
+        int bodyH = wrapped.size() * bodyLineH;
+        int height = PAD + headerH + (wrapped.isEmpty() ? 0 : (LINE_GAP + bodyH)) + PAD;
+
+        // Background box
+        graphics.setColor(ColorScheme.DARKER_GRAY_COLOR);
+        graphics.fillRoundRect(0, 0, width, height, 10, 10);
+
+        // Icon (OSRS quest sprite)
+        BufferedImage icon = null;
+        if (showQuestIcon)
+        {
+            icon = getOrRequestSprite(SpriteID.QUESTS_PAGE_ICON_BLUE_QUESTS);
+        }
+
+        graphics.setColor(java.awt.Color.WHITE);
+
+        // Row 1: icon + title
+        graphics.setFont(titleFont);
+        int titleBaseline = y + titleFm.getAscent();
+        int titleX = x;
+
+        if (icon != null)
+        {
+            /*
+             * Vertically center the icon on the title text baseline.
+             * This prevents the icon from sitting too high/low across UI scales.
+             */
+            int iconY = titleBaseline - (ICON_SIZE / 2) - (titleFm.getAscent() / 2) + 1;
+            graphics.drawImage(icon, x, iconY, ICON_SIZE, ICON_SIZE, null);
+            titleX += ICON_SIZE + ICON_GAP;
+        }
+
+        graphics.drawString(title, titleX, titleBaseline);
+
+        // Row 2: Step X of Y
+        y += titleLineH + LINE_GAP;
+        graphics.setFont(bodyFont);
+        int row2Baseline = y + bodyFm.getAscent();
+
+        String stepText = "Step " + stepNum + " of " + total;
+        graphics.drawString(stepText, x, row2Baseline);
+
+        // Body why text
+        if (!wrapped.isEmpty())
+        {
+            y += bodyLineH + LINE_GAP;
+            int lineY = y + bodyFm.getAscent();
+            for (String line : wrapped)
             {
-                addWrapped(pc, why);
+                graphics.drawString(line, x, lineY);
+                lineY += bodyLineH;
             }
-
-            return super.render(graphics);
         }
 
-        // Fallback
-        pc.getChildren().add(LineComponent.builder().left(step.getType().name()).build());
-        return super.render(graphics);
-    }
-
-    private static String pillText(QuestState state)
-    {
-        if (state == null)
-        {
-            return "";
-        }
-
-        switch (state)
-        {
-            case FINISHED:
-                return "Done";
-            case IN_PROGRESS:
-                return "In progress";
-            case NOT_STARTED:
-            default:
-                return "Ready";
-        }
-    }
-
-    private static void addWrapped(PanelComponent pc, String text)
-    {
-        for (String line : wrap(text))
-        {
-            pc.getChildren().add(LineComponent.builder()
-                .left(line)
-                .build());
-        }
+        return new Dimension(width, height);
     }
 
     private static List<String> wrap(String text)
@@ -231,5 +282,55 @@ public class ActiveStepOverlay extends OverlayPanel
             default:
                 return "";
         }
+    }
+
+    private BufferedImage getOrRequestSprite(int spriteId)
+    {
+        BufferedImage cached = SPRITE_CACHE.get(spriteId);
+        if (cached != null)
+        {
+            return cached;
+        }
+
+        if (spriteManager == null)
+        {
+            return null;
+        }
+
+        if (!SPRITE_IN_FLIGHT.add(spriteId))
+        {
+            return null;
+        }
+
+        Runnable request = () ->
+        {
+            BufferedImage img = spriteManager.getSprite(spriteId, 0);
+            if (img != null)
+            {
+                SPRITE_CACHE.put(spriteId, img);
+                SPRITE_IN_FLIGHT.remove(spriteId);
+                return;
+            }
+
+            spriteManager.getSpriteAsync(spriteId, 0, sprite ->
+            {
+                if (sprite != null)
+                {
+                    SPRITE_CACHE.put(spriteId, sprite);
+                }
+                SPRITE_IN_FLIGHT.remove(spriteId);
+            });
+        };
+
+        if (clientThread != null)
+        {
+            clientThread.invokeLater(request);
+        }
+        else
+        {
+            request.run();
+        }
+
+        return null;
     }
 }

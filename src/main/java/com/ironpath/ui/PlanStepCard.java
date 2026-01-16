@@ -13,6 +13,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import net.runelite.client.callback.ClientThread;
+import net.runelite.client.game.SpriteManager;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 
@@ -23,17 +25,17 @@ public final class PlanStepCard
 {
     private PlanStepCard() {}
 
-    public static JPanel compact(SpineStepView view)
+    public static JPanel compact(SpriteManager spriteManager, ClientThread clientThread, SpineStepView view)
     {
         if (view == null)
         {
             return empty("Unknown step", -1, -1);
         }
 
-        return compact(view.getStep(), view.getSpineIndex(), view.getSpineTotal());
+        return compact(spriteManager, clientThread, view.getStep(), view.getSpineIndex(), view.getSpineTotal());
     }
 
-    public static JPanel compact(PlanStep step, int spineIndex, int spineTotal)
+    public static JPanel compact(SpriteManager spriteManager, ClientThread clientThread, PlanStep step, int spineIndex, int spineTotal)
     {
         if (step == null)
         {
@@ -43,7 +45,7 @@ public final class PlanStepCard
         if (step.getType() == PlanStepType.QUEST && step instanceof QuestPlanStep)
         {
             QuestPlanStep q = (QuestPlanStep) step;
-            return QuestCard.compact(q.getEntry(), q.getState(), spineIndex, spineTotal);
+            return QuestCard.compact(spriteManager, clientThread, q.getEntry(), q.getState(), spineIndex, spineTotal);
         }
 
         if (step.getType() == PlanStepType.TRAIN && step instanceof TrainPlanStep)
@@ -53,7 +55,7 @@ public final class PlanStepCard
 
         if (step instanceof InfoPlanStep)
         {
-            return info((InfoPlanStep) step, spineIndex, spineTotal);
+            return info(spriteManager, clientThread, (InfoPlanStep) step, spineIndex, spineTotal);
         }
 
         return empty(step.getType().name(), spineIndex, spineTotal);
@@ -71,14 +73,14 @@ public final class PlanStepCard
         return p;
     }
 
-    private static JPanel info(InfoPlanStep s, int spineIndex, int spineTotal)
+    private static JPanel info(SpriteManager spriteManager, ClientThread clientThread, InfoPlanStep s, int spineIndex, int spineTotal)
     {
         // Render MINIQUEST with quest-like card styling for consistency.
         if (s.getType() == PlanStepType.MINIQUEST)
         {
             String title = s.getTitle() == null ? "Miniquest" : s.getTitle();
             String detail = s.getDetail();
-            return MiniquestCard.compact(title, detail, s.getWikiUrl(), spineIndex, spineTotal);
+            return MiniquestCard.compact(spriteManager, clientThread, title, detail, s.getWikiUrl(), spineIndex, spineTotal);
         }
 
         JPanel p = base();

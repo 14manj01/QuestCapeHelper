@@ -17,12 +17,15 @@ import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.eventbus.Subscribe;
+import net.runelite.client.game.SpriteManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.ClientToolbar;
 import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.ui.overlay.OverlayManager;
 import net.runelite.client.util.ImageUtil;
+
+import javax.swing.SwingUtilities;
 
 @Slf4j
 @PluginDescriptor(
@@ -35,6 +38,7 @@ public class IronmanPathPlugin extends Plugin
     @Inject private Client client;
     @Inject private ClientThread clientThread;
     @Inject private ClientToolbar clientToolbar;
+    @Inject private SpriteManager spriteManager;
 
     @Inject private QuestRouteService questRouteService;
     @Inject private ProgressionPlanService progressionPlanService;
@@ -50,6 +54,11 @@ public class IronmanPathPlugin extends Plugin
     // Delay the first refresh after login so skills/quests/varbits settle and we avoid UI thrash.
     private int refreshInTicks = 0;
 
+    // Varbits can change extremely frequently (run energy, timers, etc.).
+    // Mark the panel as dirty and refresh at a low, human-friendly rate.
+    private boolean panelDirty = false;
+    private int varbitRefreshCooldownTicks = 0;
+
     @Provides
     IronmanPathConfig provideConfig(ConfigManager configManager)
     {
@@ -59,7 +68,7 @@ public class IronmanPathPlugin extends Plugin
     @Override
     protected void startUp()
     {
-        panel = new IronmanPathPanel(questRouteService, progressionPlanService, clientThread);
+        panel = new IronmanPathPanel(questRouteService, progressionPlanService, clientThread, spriteManager);
 
         final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "/com/ironpath/icon.png");
 
@@ -106,6 +115,8 @@ public class IronmanPathPlugin extends Plugin
         {
             // Wait a couple ticks so quest state/skills/varbits are populated.
             refreshInTicks = 2;
+            panelDirty = false;
+            varbitRefreshCooldownTicks = 0;
             panel.showLoading();
             return;
         }
@@ -113,6 +124,8 @@ public class IronmanPathPlugin extends Plugin
         if (event.getGameState() == GameState.LOGIN_SCREEN || event.getGameState() == GameState.HOPPING)
         {
             refreshInTicks = 0;
+            panelDirty = false;
+            varbitRefreshCooldownTicks = 0;
         }
     }
 
@@ -129,8 +142,22 @@ public class IronmanPathPlugin extends Plugin
             refreshInTicks--;
             if (refreshInTicks == 0)
             {
-                panel.requestRefresh();
+                requestRefreshIfPanelShowing();
             }
+        }
+
+        // Rate-limit refreshes caused by frequent varbit changes.
+        if (varbitRefreshCooldownTicks > 0)
+        {
+            varbitRefreshCooldownTicks--;
+        }
+
+        if (panelDirty && varbitRefreshCooldownTicks == 0)
+        {
+            panelDirty = false;
+            // ~1.8s at 0.6s per tick. Keeps UI responsive without constant rebuilds.
+            varbitRefreshCooldownTicks = 3;
+            requestRefreshIfPanelShowing();
         }
     }
 
@@ -142,8 +169,9 @@ public class IronmanPathPlugin extends Plugin
             return;
         }
 
-        // Coalesce frequent varbit/varp changes into a single UI rebuild.
-        panel.requestRefresh();
+        // Varbits change very frequently. Mark dirty and refresh on a short tick-based cadence.
+        // This avoids constant panel rebuilds (and prevents icon flicker).
+        panelDirty = true;
     }
 
     @Subscribe
@@ -154,6 +182,19 @@ public class IronmanPathPlugin extends Plugin
             return;
         }
 
-        panel.requestRefresh();
+        requestRefreshIfPanelShowing();
+    }
+
+    private void requestRefreshIfPanelShowing()
+    {
+        // Only rebuild the sidebar when it's actually visible.
+        // This prevents background varbit churn from constantly recreating cards.
+        SwingUtilities.invokeLater(() ->
+        {
+            if (panel != null && panel.isShowing())
+            {
+                panel.requestRefresh();
+            }
+        });
     }
 }
