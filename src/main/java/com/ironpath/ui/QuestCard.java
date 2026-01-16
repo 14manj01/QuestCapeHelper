@@ -8,7 +8,9 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.Image;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,14 +22,17 @@ import net.runelite.client.callback.ClientThread;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.util.LinkBrowser;
+import java.awt.image.BufferedImage;
+import javax.swing.SwingUtilities;
 
 public final class QuestCard
 {
     private static final int PAD = 10;
     private static final int ICON_SIZE = 16;
 
-    // Icons are sourced from OSRS cache sprites via SpriteManager.
-    // We intentionally do not use bundled fallbacks to avoid icon swapping during refreshes.
+    // Fallback icon only. Real icons are pulled from the OSRS cache via SpriteManager.
+    // If the resource is missing, the layout still reserves space and stays stable.
+    private static final ImageIcon FALLBACK_QUEST_ICON = loadIcon("icons/quest.png");
 
     private QuestCard() {}
 
@@ -136,7 +141,7 @@ public final class QuestCard
         c.insets = new Insets(0, 0, 0, 0);
         // RuneLite SpriteID doesn't expose a consistent "QUESTS_TAB" constant across versions.
         // Use the quests page icon sprite, which is stable and matches the in-game quests UI.
-        card.add(iconTitleRow(spriteManager, clientThread, SpriteID.QUESTS_PAGE_ICON_BLUE_QUESTS, entry.getQuestName()), c);
+        card.add(iconTitleRow(spriteManager, clientThread, SpriteID.QUESTS_PAGE_ICON_BLUE_QUESTS, FALLBACK_QUEST_ICON, entry.getQuestName()), c);
 
         // Row 2: "Step X of Y" (left) + Quest Guide (right)
         String stepLine = formatProgressLong(spineIndex, spineTotal);
@@ -284,7 +289,7 @@ public final class QuestCard
         return wrap;
     }
 
-    private static JPanel iconTitleRow(SpriteManager spriteManager, ClientThread clientThread, int spriteId, String titleText)
+    private static JPanel iconTitleRow(SpriteManager spriteManager, ClientThread clientThread, int spriteId, ImageIcon fallbackIcon, String titleText)
     {
         JPanel row = new JPanel(new GridBagLayout());
         row.setOpaque(false);
@@ -295,11 +300,7 @@ public final class QuestCard
         r.insets = new Insets(0, 0, 0, 6);
 
         // Icon (fixed slot, prevents text jitter)
-        JLabel iconLabel = new JLabel();
-        iconLabel.setOpaque(false);
-        // Attach the OSRS sprite icon (cached) without fallbacks to avoid swapping during refreshes.
-        SpriteIconCache.attach(iconLabel, spriteManager, clientThread, spriteId, ICON_SIZE);
-        iconLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        JLabel iconLabel = buildSpriteIconLabel(spriteManager, clientThread, spriteId, fallbackIcon);
         // OSRS cache sprites often include a small amount of transparent padding.
         // Nudge the icon up slightly so it aligns better with the title text.
         iconLabel.setBorder(BorderFactory.createEmptyBorder(-2, 0, 0, 0));
@@ -323,7 +324,99 @@ public final class QuestCard
         return row;
     }
 
-    
+    private static JLabel buildSpriteIconLabel(SpriteManager spriteManager, ClientThread clientThread, int spriteId, ImageIcon fallbackIcon)
+    {
+        JLabel label = new JLabel();
+        label.setOpaque(false);
+
+        if (spriteManager == null)
+        {
+            if (fallbackIcon != null)
+            {
+                label.setIcon(fallbackIcon);
+            }
+            return label;
+        }
+
+        // Always set fallback first so the layout is stable even if sprite loading is delayed.
+        if (fallbackIcon != null)
+        {
+            label.setIcon(fallbackIcon);
+        }
+
+        // SpriteManager access is safest from the client thread.
+        Runnable request = () ->
+        {
+            BufferedImage img = spriteManager.getSprite(spriteId, 0);
+            if (img != null)
+            {
+                SwingUtilities.invokeLater(() ->
+                {
+                    label.setIcon(new ImageIcon(scale(img)));
+                    label.revalidate();
+                    label.repaint();
+                });
+                return;
+            }
+
+            spriteManager.getSpriteAsync(spriteId, 0, sprite ->
+            {
+                if (sprite == null)
+                {
+                    return;
+                }
+
+                SwingUtilities.invokeLater(() ->
+                {
+                    label.setIcon(new ImageIcon(scale(sprite)));
+                    label.revalidate();
+                    label.repaint();
+                });
+            });
+        };
+
+        if (clientThread != null)
+        {
+            clientThread.invokeLater(request);
+        }
+        else
+        {
+            // Best-effort if clientThread isn't available.
+            request.run();
+        }
+        return label;
+    }
+
+    private static Image scale(java.awt.image.BufferedImage img)
+    {
+        return img.getScaledInstance(ICON_SIZE, ICON_SIZE, Image.SCALE_SMOOTH);
+    }
+
+    private static ImageIcon loadIcon(String relPath)
+    {
+        try
+        {
+            java.net.URL u = QuestCard.class.getResource(relPath.startsWith("/") ? relPath : "/com/ironpath/ui/" + relPath);
+            if (u == null)
+            {
+                return null;
+            }
+
+            Image img = javax.imageio.ImageIO.read(u);
+            if (img == null)
+            {
+                return null;
+            }
+
+            Image scaled = img.getScaledInstance(ICON_SIZE, ICON_SIZE, Image.SCALE_SMOOTH);
+            return new ImageIcon(scaled);
+        }
+        catch (Exception ignored)
+        {
+            return null;
+        }
+    }
+
 
     private static void forceFillWidth(JPanel panel)
     {

@@ -35,11 +35,14 @@ public class QuestDatabase
 {
     private static final String RESOURCE_PATH = "/com/ironpath/quest_db.json";
 
+    private final Gson gson;
+
     private final Map<Quest, QuestMeta> metaByQuest;
 
     @Inject
-    public QuestDatabase()
+    public QuestDatabase(final Gson gson)
     {
+        this.gson = gson;
         this.metaByQuest = Collections.unmodifiableMap(load());
     }
 
@@ -78,7 +81,6 @@ public class QuestDatabase
 
         try (InputStreamReader r = new InputStreamReader(in, StandardCharsets.UTF_8))
         {
-            Gson gson = new Gson();
             Type t = new TypeToken<Map<String, QuestMetaJson>>() {}.getType();
             Map<String, QuestMetaJson> raw = gson.fromJson(r, t);
             if (raw == null || raw.isEmpty())

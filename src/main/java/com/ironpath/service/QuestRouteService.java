@@ -35,15 +35,17 @@ import net.runelite.api.Skill;
 @Singleton
 public class QuestRouteService
 {
-    private static final Gson GSON = new Gson();
-private static final String ROUTE_RESOURCE = "/com/ironpath/wiki_route.json";
+    private static final String ROUTE_RESOURCE = "/com/ironpath/wiki_route.json";
     private static final String TAG_FILLER = "filler";
+
+    private final Gson gson;
 
     private final List<RouteStep> spine;
 
     @Inject
-    public QuestRouteService()
+    public QuestRouteService(final Gson gson)
     {
+        this.gson = gson;
         this.spine = buildSpine();
     }
 
@@ -52,7 +54,7 @@ private static final String ROUTE_RESOURCE = "/com/ironpath/wiki_route.json";
         return spine;
     }
 
-    private static List<RouteStep> buildSpine()
+    private List<RouteStep> buildSpine()
     {
         final List<RouteStep> out = new ArrayList<>();
         final Set<Quest> addedQuests = new LinkedHashSet<>();
@@ -164,7 +166,7 @@ return out;
     }
 
 
-    private static List<RouteStepJson> loadJson()
+    private List<RouteStepJson> loadJson()
     {
         try (InputStream in = QuestRouteService.class.getResourceAsStream(ROUTE_RESOURCE))
         {
@@ -175,7 +177,7 @@ return out;
             }
 
             Type type = new TypeToken<List<RouteStepJson>>() {}.getType();
-            return GSON.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), type);
+            return gson.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), type);
         }
         catch (Exception e)
         {

@@ -6,12 +6,15 @@ import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.Image;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
- 
+import javax.swing.SwingUtilities;
+import java.awt.image.BufferedImage;
 import net.runelite.api.SpriteID;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.game.SpriteManager;
@@ -27,8 +30,9 @@ public final class MiniquestCard
 {
     private static final int ICON_SIZE = 16;
 
-    // Icons are sourced from OSRS cache sprites via SpriteManager.
-    // We intentionally do not use bundled fallbacks to avoid icon swapping during refreshes.
+    // Fallback icon only. Real icons are pulled from the OSRS cache via SpriteManager.
+    // If the resource is missing, the layout still reserves space and stays stable.
+    private static final ImageIcon FALLBACK_MINIQUEST_ICON = loadIcon("icons/miniquest.png");
 
     private MiniquestCard() {}
 
@@ -68,7 +72,7 @@ public final class MiniquestCard
         c.fill = GridBagConstraints.HORIZONTAL;
         c.anchor = GridBagConstraints.NORTHWEST;
         c.insets = new Insets(0, 0, 0, 0);
-        card.add(iconTitleRow(spriteManager, clientThread, spriteId, titleText == null ? "" : titleText), c);
+        card.add(iconTitleRow(spriteManager, clientThread, spriteId, FALLBACK_MINIQUEST_ICON, titleText == null ? "" : titleText), c);
 
         // Row 2: "Step X of Y" (left) + Quest Guide (right, if present)
         String stepLine = formatProgressLong(spineIndex, spineTotal);
@@ -165,7 +169,7 @@ public final class MiniquestCard
         return area;
     }
 
-    private static JPanel iconTitleRow(SpriteManager spriteManager, ClientThread clientThread, int spriteId, String titleText)
+    private static JPanel iconTitleRow(SpriteManager spriteManager, ClientThread clientThread, int spriteId, ImageIcon fallbackIcon, String titleText)
     {
         JPanel row = new JPanel(new GridBagLayout());
         row.setOpaque(false);
@@ -175,11 +179,7 @@ public final class MiniquestCard
         r.anchor = GridBagConstraints.NORTHWEST;
         r.insets = new Insets(0, 0, 0, 6);
 
-        JLabel iconLabel = new JLabel();
-        iconLabel.setOpaque(false);
-        // Attach the OSRS sprite icon (cached) without fallbacks to avoid swapping during refreshes.
-        SpriteIconCache.attach(iconLabel, spriteManager, clientThread, spriteId, ICON_SIZE);
-        iconLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        JLabel iconLabel = buildSpriteIconLabel(spriteManager, clientThread, spriteId, fallbackIcon);
         // OSRS cache sprites often include a small amount of transparent padding.
         // Nudge the icon up slightly so it aligns better with the title text.
         iconLabel.setBorder(BorderFactory.createEmptyBorder(-2, 0, 0, 0));
@@ -200,6 +200,73 @@ public final class MiniquestCard
         row.add(title, r);
 
         return row;
+    }
+
+    private static JLabel buildSpriteIconLabel(SpriteManager spriteManager, ClientThread clientThread, int spriteId, ImageIcon fallbackIcon)
+    {
+        JLabel label = new JLabel();
+        label.setOpaque(false);
+
+        if (spriteManager == null)
+        {
+            if (fallbackIcon != null)
+            {
+                label.setIcon(fallbackIcon);
+            }
+            return label;
+        }
+
+        // Always set fallback first so the layout is stable even if sprite loading is delayed.
+        if (fallbackIcon != null)
+        {
+            label.setIcon(fallbackIcon);
+        }
+
+        // SpriteManager access is safest from the client thread.
+        Runnable request = () ->
+        {
+            BufferedImage img = spriteManager.getSprite(spriteId, 0);
+            if (img != null)
+            {
+                SwingUtilities.invokeLater(() ->
+                {
+                    label.setIcon(new ImageIcon(scale(img)));
+                    label.revalidate();
+                    label.repaint();
+                });
+                return;
+            }
+
+            spriteManager.getSpriteAsync(spriteId, 0, sprite ->
+            {
+                if (sprite == null)
+                {
+                    return;
+                }
+
+                SwingUtilities.invokeLater(() ->
+                {
+                    label.setIcon(new ImageIcon(scale(sprite)));
+                    label.revalidate();
+                    label.repaint();
+                });
+            });
+        };
+
+        if (clientThread != null)
+        {
+            clientThread.invokeLater(request);
+        }
+        else
+        {
+            request.run();
+        }
+        return label;
+    }
+
+    private static Image scale(BufferedImage img)
+    {
+        return img.getScaledInstance(ICON_SIZE, ICON_SIZE, Image.SCALE_SMOOTH);
     }
 
     private static JPanel wikiPill(String wikiUrl)
@@ -224,5 +291,28 @@ public final class MiniquestCard
         return wrap;
     }
 
+    private static ImageIcon loadIcon(String relPath)
+    {
+        try
+        {
+            java.net.URL u = MiniquestCard.class.getResource(relPath.startsWith("/") ? relPath : "/com/ironpath/ui/" + relPath);
+            if (u == null)
+            {
+                return null;
+            }
 
+            Image img = javax.imageio.ImageIO.read(u);
+            if (img == null)
+            {
+                return null;
+            }
+
+            Image scaled = img.getScaledInstance(ICON_SIZE, ICON_SIZE, Image.SCALE_SMOOTH);
+            return new ImageIcon(scaled);
+        }
+        catch (Exception ignored)
+        {
+            return null;
+        }
+    }
 }

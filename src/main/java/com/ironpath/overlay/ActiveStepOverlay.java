@@ -3,9 +3,9 @@ package com.ironpath.overlay;
 import com.ironpath.IronmanPathConfig;
 import com.ironpath.model.InfoPlanStep;
 import com.ironpath.model.PlanStep;
+import com.ironpath.model.SpineStepView;
 import com.ironpath.model.PlanStepType;
 import com.ironpath.model.QuestPlanStep;
-import com.ironpath.model.SpineStepView;
 import com.ironpath.model.TrainPlanStep;
 import com.ironpath.service.ProgressionPlanService;
 import com.ironpath.service.QuestRouteService;
@@ -15,7 +15,6 @@ import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -23,6 +22,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.inject.Inject;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
+import net.runelite.api.QuestState;
 import net.runelite.api.SpriteID;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.game.SpriteManager;
@@ -31,6 +31,8 @@ import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPanel;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.components.PanelComponent;
+
+import java.util.ArrayList;
 
 /**
  * Displays the current active step (first step in the Next N list) in the game view.
@@ -106,12 +108,10 @@ public class ActiveStepOverlay extends OverlayPanel
         final SpineStepView view = next.get(0);
         final PlanStep step = view.getStep();
         final PanelComponent pc = getPanelComponent();
-
-        // Compact overlay:
+        // We draw a custom overlay that mirrors the quest card layout:
         // Row 1: [icon] Title
-        // Row 2: "Step X of Y" (left)
+        // Row 2: "Step X of Y" (left) and "Quest Guide" (right)
         // Body: why text wrapped
-        // NOTE: "Quest Guide" text removed.
         pc.getChildren().clear();
 
         final int stepNum = view.getSpineIndex() + 1;
@@ -147,7 +147,7 @@ public class ActiveStepOverlay extends OverlayPanel
             title = step.getType().name();
         }
 
-        // Render hints
+        // Render
         graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
         graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
@@ -171,16 +171,15 @@ public class ActiveStepOverlay extends OverlayPanel
         FontMetrics bodyFm = graphics.getFontMetrics();
         int bodyLineH = bodyFm.getHeight();
 
-        // Layout heights
         int headerH = titleLineH + LINE_GAP + bodyLineH;
         int bodyH = wrapped.size() * bodyLineH;
         int height = PAD + headerH + (wrapped.isEmpty() ? 0 : (LINE_GAP + bodyH)) + PAD;
 
-        // Background box
+        // Background box (match sidebar card feel)
         graphics.setColor(ColorScheme.DARKER_GRAY_COLOR);
         graphics.fillRoundRect(0, 0, width, height, 10, 10);
 
-        // Icon (OSRS quest sprite)
+        // Icon
         BufferedImage icon = null;
         if (showQuestIcon)
         {
@@ -190,30 +189,34 @@ public class ActiveStepOverlay extends OverlayPanel
         graphics.setColor(java.awt.Color.WHITE);
 
         // Row 1: icon + title
-        graphics.setFont(titleFont);
         int titleBaseline = y + titleFm.getAscent();
         int titleX = x;
-
         if (icon != null)
         {
-            /*
-             * Vertically center the icon on the title text baseline.
-             * This prevents the icon from sitting too high/low across UI scales.
-             */
-            int iconY = titleBaseline - (ICON_SIZE / 2) - (titleFm.getAscent() / 2) + 1;
+            // Nudge icon up to match the card alignment
+            int iconY = y - 4;
             graphics.drawImage(icon, x, iconY, ICON_SIZE, ICON_SIZE, null);
             titleX += ICON_SIZE + ICON_GAP;
         }
 
+        graphics.setFont(titleFont);
         graphics.drawString(title, titleX, titleBaseline);
 
-        // Row 2: Step X of Y
+        // Row 2: Step X of Y (left) and Quest Guide (right)
         y += titleLineH + LINE_GAP;
         graphics.setFont(bodyFont);
         int row2Baseline = y + bodyFm.getAscent();
 
         String stepText = "Step " + stepNum + " of " + total;
         graphics.drawString(stepText, x, row2Baseline);
+
+        // Mirror the card's right-side "Quest Guide" affordance for quest steps.
+        if (showQuestIcon)
+        {
+            String guide = "Quest Guide";
+            int guideW = bodyFm.stringWidth(guide);
+            graphics.drawString(guide, width - PAD - guideW, row2Baseline);
+        }
 
         // Body why text
         if (!wrapped.isEmpty())
