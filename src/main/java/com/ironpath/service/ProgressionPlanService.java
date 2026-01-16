@@ -323,17 +323,17 @@ public class ProgressionPlanService
         switch (step.getType())
         {
             case QUEST:
-                return "Complete this quest in the OSRS Wiki Optimal Quest Guide order to minimise extra training.";
+                return "Complete this quest in the Optimal Quest Guide order to minimise extra training.";
             case MINIQUEST:
-                return "Recommended miniquest in the OSRS Wiki Optimal Quest Guide.";
+                return "Complete this quest in the Optimal Quest Guide order to minimise extra training.";
             case UNLOCK:
-                return "Recommended unlock in the OSRS Wiki Optimal Quest Guide.";
+                return "Recommended unlock.";
             case DIARY:
-                return "Recommended diary step in the OSRS Wiki Optimal Quest Guide.";
+                return "Recommended diary step in the Optimal Quest Order.";
             case TRAIN:
-                return "Recommended training checkpoint in the OSRS Wiki Optimal Quest Guide.";
+                return "Recommended training checkpoint in the Optimal Quest Order.";
             default:
-                return "Follow the OSRS Wiki Optimal Quest Guide order.";
+                return "Complete this  in the Optimal Quest Guide order to minimise extra training.";
         }
     }
 
