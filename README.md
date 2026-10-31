@@ -124,7 +124,7 @@ Recommended: keep explicit `wikiUrl` values for full control and easy edits.
 
 ## Credits
 
-Author: Myip of TDD  
+Author: Myip of TDD ([James Mann](https://bug.lat/programming.html))  
 Route basis: OSRS Wiki Optimal Quest Guide (encoded into `wiki_route.json`)
 
 ---
